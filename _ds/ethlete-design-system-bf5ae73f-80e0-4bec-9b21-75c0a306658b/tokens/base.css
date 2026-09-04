@@ -1,0 +1,15 @@
+/* Minimal element defaults so consuming pages inherit the brand voice. */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { margin: 0; font-family: var(--font-ui); font-size: var(--fs-body); line-height: var(--lh-body); color: var(--text-primary); background: var(--surface-page); }
+* { box-sizing: border-box; }
+a { color: var(--text-link); text-decoration: none; transition: opacity var(--dur-base) var(--ease-standard); }
+a:hover { color: var(--text-link-hover); opacity: 0.65; }
+img { display: block; max-width: 100%; }
+::selection { background: var(--eth-volt); color: var(--eth-black); }
+/* Focus is its own treatment, not a borrowed brand colour — blue is gone.
+   Ink ring plus a white spacer so it reads on Mist, Bone and Volt alike. */
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; box-shadow: 0 0 0 2px var(--eth-white); }
+/* On Ink or a dark photograph, the ring switches to Volt. */
+.on-dark :focus-visible, [data-surface="inverse"] :focus-visible { outline-color: var(--focus-ring-inverse); box-shadow: 0 0 0 2px var(--eth-black); }
+/* Tap targets never below 44px — 83% of sessions are mobile. */
+:root { --tap-min: 44px; }

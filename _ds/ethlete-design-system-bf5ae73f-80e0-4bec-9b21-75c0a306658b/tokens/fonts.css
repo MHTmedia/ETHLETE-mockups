@@ -1,0 +1,16 @@
+/* ETHLETE webfonts — Brand Guidelines v1.1, section 03.
+
+   BODY / UI — Poppins. Confirmed, free on Google Fonts. Light 300, Regular 400,
+   Medium 500, Bold 700 is the full shipping range: enough for the whole site,
+   small payload.
+
+   DISPLAY — Eurostile Bold. The wordmark is built in it and the same squared
+   geometric construction is the brand standard for display headlines. Eurostile
+   is LICENSED, not a Google Font, and is not bundled here. Until the licence is
+   purchased, --font-display falls through to Saira, loaded below as the closest
+   free squared-geometric stand-in. This is a documented interim, not the brand
+   standard — see guidelines/type-open-item.card.html.
+
+   Inter and Instrument Sans, which the live storefront currently serves, are
+   NOT brand fonts and are no longer referenced. */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Saira:wght@500;600;700&display=swap");

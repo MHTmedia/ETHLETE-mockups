@@ -1,0 +1,62 @@
+/* Spacing, radii, borders, shadows, motion.
+   The source is a Shopify storefront: layout padding is a small set of
+   repeated values (10 / 16 / 19 / 20 / 30 / 32 / 34 / 40 / 50 / 144). */
+:root {
+  --space-2: 2px; /* @kind spacing */
+  --space-4: 4px; /* @kind spacing */
+  --space-7: 7px; /* @kind spacing */
+  --space-8: 8px; /* @kind spacing */
+  --space-9: 9px; /* @kind spacing */
+  --space-10: 10px; /* @kind spacing */
+  --space-11: 11px; /* @kind spacing */
+  --space-14: 14px; /* @kind spacing */
+  --space-16: 16px; /* @kind spacing */
+  --space-19: 19px; /* @kind spacing */
+  --space-20: 20px; /* @kind spacing */
+  --space-22: 22px; /* @kind spacing */
+  --space-30: 30px; /* @kind spacing */
+  --space-32: 32px; /* @kind spacing */
+  --space-34: 34px; /* @kind spacing */
+  --space-36: 36px; /* @kind spacing */
+  --space-40: 40px; /* @kind spacing */
+  --space-50: 50px; /* @kind spacing */
+  --space-144: 144px; /* @kind spacing */
+
+  --page-max: 1440px; /* @kind spacing */
+  --page-gutter: 34px; /* @kind spacing */
+  --page-gutter-wide: 50px; /* @kind spacing */
+  --page-gutter-narrow: 20px; /* @kind spacing */
+  --section-pad-y: 50px; /* @kind spacing */
+  --header-height: 76px; /* @kind spacing */
+
+  /* Radii — the storefront is deliberately near-square. */
+  --radius-none: 0; /* @kind radius */
+  --radius-2: 2px; /* @kind radius */    /* micro chips, breadcrumb pips */
+  --radius-3: 3px; /* @kind radius */    /* buttons */
+  --radius-4: 4px; /* @kind radius */
+  --radius-5: 5px; /* @kind radius */
+  --radius-8: 8px; /* @kind radius */
+  --radius-10: 10px; /* @kind radius */  /* purchase-option cards, savings badge, radios */
+  --radius-42: 42px; /* @kind radius */
+  --radius-pill: 999px; /* @kind radius */
+  --radius-circle: 50%; /* @kind radius */
+
+  --border-width: 1px; /* @kind other */
+  --border-strong-1: 1px solid var(--eth-black); /* @kind other */
+  --border-hairline-1: 1px solid var(--eth-grey-82); /* @kind other */
+
+  /* Shadows — only four exist in the file, all short and low-opacity. */
+  --shadow-option: 0 2px 4px 0 rgba(0,0,0,0.22); /* @kind shadow */
+  --shadow-soft: 0 2px 4px 0 rgba(0,0,0,0.15); /* @kind shadow */
+  --shadow-card: 0 4px 12px 0 rgba(0,0,0,0.09); /* @kind shadow */
+  --shadow-overlay: 0 0 20px 0 rgba(0,0,0,0.2); /* @kind shadow */
+  --shadow-focus: 0 0 0 2px var(--focus-ring); /* @kind shadow */
+
+  --blur-quick-add: blur(5px); /* @kind other */
+
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur-base: 200ms; /* @kind other */
+  --dur-slow: 400ms; /* @kind other */
+  --dur-ticker: 30s; /* @kind other */
+}

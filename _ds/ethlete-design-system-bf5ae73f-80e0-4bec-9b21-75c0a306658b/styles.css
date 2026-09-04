@@ -1,0 +1,9 @@
+@import "./tokens/fonts.css";
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/space.css";
+@import "./tokens/base.css";
+/* The raw Figma-variable dump lives at reference/figma-variables.css and is
+   deliberately NOT imported — it is scraped geometry (--width-224-93,
+   --height-399-88) plus a macOS system fallback the importer captured, not a
+   token system. Kept as a provenance record only. */

@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#212121"/><g transform="translate(60,70)"><rect width="80" height="60" rx="2" fill="#E5FF01"/><text x="40" y="38" font-family="sans-serif" font-weight="700" font-size="22" fill="#212121" text-anchor="middle">E</text></g></svg></template>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/ethlete-design-system-bf5ae73f-80e0-4bec-9b21-75c0a306658b/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/ethlete-design-system-bf5ae73f-80e0-4bec-9b21-75c0a306658b/tokens/colors.css">
+<link rel="stylesheet" href="_ds/ethlete-design-system-bf5ae73f-80e0-4bec-9b21-75c0a306658b/tokens/typography.css">
+<link rel="stylesheet" href="_ds/ethlete-design-system-bf5ae73f-80e0-4bec-9b21-75c0a306658b/tokens/space.css">
+<link rel="stylesheet" href="_ds/ethlete-design-system-bf5ae73f-80e0-4bec-9b21-75c0a306658b/tokens/base.css">
+<link rel="stylesheet" href="_ds/ethlete-design-system-bf5ae73f-80e0-4bec-9b21-75c0a306658b/styles.css">
+<script src="_ds/ethlete-design-system-bf5ae73f-80e0-4bec-9b21-75c0a306658b/_ds_bundle.js"></script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fff;font-family:var(--font-ui);color:var(--eth-ink);-webkit-font-smoothing:antialiased}
+a{color:var(--eth-ink);text-decoration:none}
+a:hover{opacity:.6}
+a,button{transition:background-color .22s cubic-bezier(.25,.1,.25,1),color .22s cubic-bezier(.25,.1,.25,1),border-color .22s cubic-bezier(.25,.1,.25,1),opacity .22s cubic-bezier(.25,.1,.25,1)}
+@keyframes eth-menu-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes eth-offer-in{from{opacity:0}to{opacity:1}}
+@keyframes eth-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes eth-scrim-in{from{opacity:0}to{opacity:1}}
+@keyframes eth-drawer-in{from{transform:translateX(100%)}to{transform:translateX(0)}}
+@keyframes eth-overlay-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1160px){[data-desk]{display:none!important}[data-mob]{display:flex!important}}
+@media(max-width:600px){[data-floater]{display:none!important}}
+@media(max-width:860px){[data-hero]{min-height:0!important;align-content:flex-start}[data-hero-copy],[data-hero-media]{flex:1 1 100%!important;min-width:0!important}[data-hero-media]{aspect-ratio:1400/933}}
+@media(max-width:860px){[data-para]{height:100vw!important}[data-para-sticky]{position:static!important;height:100vw!important;min-height:0!important;top:auto!important}}
+@media(max-width:860px){[data-value-panel]{justify-content:center!important;text-align:center}[data-value-price]{align-items:center!important;width:100%}[data-value-badge]{align-self:center!important}}
+</style>
+</helmet>
+
+<div style="background:#fff;position:relative">
+
+<div style="display:flex;align-items:center;justify-content:center;min-height:38px;padding:9px 16px;background:var(--eth-bone);border-bottom:1px solid var(--eth-grey-82)" data-screen-label="Offer bar">
+  <p key="{{ offerKey }}" style="margin:0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;text-align:center;animation:eth-offer-in .4s cubic-bezier(.25,.1,.25,1) both">
+    <span style="font:500 13px/1.3 var(--font-ui);letter-spacing:.4px;color:var(--eth-ink)">{{ offerText }}</span>
+  </p>
+</div>
+
+<div style="position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--eth-grey-82)">
+  <header style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;height:76px;padding:0 28px">
+    <div style="display:flex;align-items:center;gap:16px">
+      <button onClick="{{ shopAction }}" style="display:flex;align-items:center;gap:10px;height:40px;padding:0 20px;border:1px solid var(--eth-black);border-radius:20px;background:{{ shopBg }};color:{{ shopFg }};cursor:pointer">
+        <span style="font:500 15px/1 var(--font-ui)">Shop</span>
+        <span style="font:400 15px/1 var(--font-ui);opacity:.7">{{ shopGlyph }}</span>
+      </button>
+    </div>
+
+    <a href="02%20Homepage.dc.html" style="justify-self:center"><img src="assets/logo-ethlete.png" alt="ETHLETE" style="height:20px;width:auto;display:block"></a>
+
+    <div style="display:flex;align-items:center;justify-content:flex-end;gap:24px">
+      <a data-desk="1" href="#" aria-label="Search" style="display:flex;align-items:center;justify-content:center;width:24px;height:24px;color:var(--eth-grey-39)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><line x1="15.4" y1="15.4" x2="20.5" y2="20.5"></line></svg>
+      </a>
+      <a data-desk="1" href="#" style="font:400 14px/1 var(--font-ui);color:var(--eth-grey-39)">Account</a>
+      <button onClick="{{ openCart }}" aria-label="Cart, 1 item" style="position:relative;display:flex;align-items:center;justify-content:center;width:28px;height:28px;border:0;background:none;padding:0;cursor:pointer;color:var(--eth-grey-39)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 6.5h15.2l-1.5 10.2a1.6 1.6 0 0 1-1.6 1.4H7.1a1.6 1.6 0 0 1-1.6-1.4L4 6.5Z"></path><path d="M8.7 9V6.2a3.3 3.3 0 0 1 6.6 0V9"></path></svg>
+        <span style="position:absolute;top:-3px;right:-5px;min-width:16px;height:16px;padding:0 4px;border-radius:50%;background:#BD3D44;font:700 10px/16px var(--font-ui);text-align:center;color:#fff">1</span>
+      </button>
+    </div>
+  </header>
+
+  <sc-if value="{{ shopOpen }}" hint-placeholder-val="{{ false }}">
+    <div data-desk="1" style="position:absolute;left:0;right:0;top:100%;z-index:39;border-top:1px solid var(--eth-grey-82);background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.09);animation:eth-menu-in .26s cubic-bezier(.25,.1,.25,1) both">
+      <div style="padding:34px 28px 28px">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
+
+          <a href="03%20Product%20page.dc.html" style="display:flex;flex-direction:column;gap:14px">
+            <div style="aspect-ratio:1/.86;border:1px solid var(--eth-grey-82);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:16px">
+              <img src="https://www.ethlete.com/cdn/shop/files/Untitled_design_19_b26911b6-af67-462a-a89b-ca66ead033a6.png?v=1771299593" alt="Electrolytes + Creatine pouch, Peach Mango" style="width: 100%; height: 100%; object-fit: contain; object-position: center">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span style="align-self:flex-start;padding:4px 8px;background:var(--eth-black);color:#fff;font:700 10px/1.2 var(--font-ui);letter-spacing:1px;text-transform:uppercase">Best seller</span>
+              <span style="font:700 17px/1.3 var(--font-ui);color:var(--eth-black)">Electrolytes + Creatine</span>
+              <span style="font:400 14px/1.4 var(--font-ui);color:var(--eth-grey-39)">30 sticks, three flavors, from $48</span>
+            </div>
+          </a>
+
+          <a href="04%20Starter%20Kit.dc.html" style="display:flex;flex-direction:column;gap:14px">
+            <div style="aspect-ratio:1/.86;border:1px solid var(--eth-grey-82);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:16px">
+              <img src="assets/_xs-product-starter-kit-clean.jpg" alt="ETHLETE Starter Kit — three pouches, bottle and frother" style="width:100%;height:100%;object-fit:contain">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span style="height:18px" aria-hidden="true"></span>
+              <span style="font:700 17px/1.3 var(--font-ui);color:var(--eth-black)">Starter Kit</span>
+              <span style="font:400 14px/1.4 var(--font-ui);color:var(--eth-grey-39)">3 bags, bottle and frother — $109</span>
+            </div>
+          </a>
+
+          <a href="03%20Product%20page.dc.html" style="display:flex;flex-direction:column;gap:14px">
+            <div style="aspect-ratio:1/.86;border:1px solid var(--eth-grey-82);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:16px">
+              <img src="https://www.ethlete.com/cdn/shop/files/CreatineMonohydrate_4.png?v=1782763901&amp;width=1200" alt="ETHLETE NAD+ with NMN and Resveratrol" style="width:100%;height:100%;object-fit:contain;object-position:center">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span style="align-self:flex-start;padding:4px 8px;background:var(--eth-black);color:#fff;font:700 10px/1.2 var(--font-ui);letter-spacing:1px;text-transform:uppercase">New</span>
+              <span style="font:700 17px/1.3 var(--font-ui);color:var(--eth-black)">NAD+</span>
+              <span style="font:400 14px/1.4 var(--font-ui);color:var(--eth-grey-39)">NMN + Resveratrol, from $38</span>
+            </div>
+          </a>
+
+          <a href="#" style="display:flex;flex-direction:column;gap:14px">
+            <div style="aspect-ratio:1/.86;border:1px solid var(--eth-grey-82);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:16px">
+              <img src="https://www.ethlete.com/cdn/shop/files/Untitleddesign_18.png?v=1774545625" alt="ETHLETE frother and Fuel 750 bottle" style="width:100%;height:100%;object-fit:contain;object-position:center">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span style="height:18px" aria-hidden="true"></span>
+              <span style="font:700 17px/1.3 var(--font-ui);color:var(--eth-black)">Accessories</span>
+              <span style="font:400 14px/1.4 var(--font-ui);color:var(--eth-grey-39)">Fuel 750 bottle and frother, from $29</span>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+      <div style="display:flex;gap:36px;margin-top:30px;padding:16px 28px;background:var(--eth-mist);border-top:1px solid var(--eth-grey-82)">
+          <a href="#inside" style="font:500 13px/1 var(--font-ui);letter-spacing:.6px;text-transform:uppercase;color:var(--eth-grey-49)">Ingredients</a>
+          <a href="#" style="font:500 13px/1 var(--font-ui);letter-spacing:.6px;text-transform:uppercase;color:var(--eth-grey-49)">Blog</a>
+          <a href="#faq" style="font:500 13px/1 var(--font-ui);letter-spacing:.6px;text-transform:uppercase;color:var(--eth-grey-49)">FAQs</a>
+          <a href="#" style="font:500 13px/1 var(--font-ui);letter-spacing:.6px;text-transform:uppercase;color:var(--eth-grey-49)">Wholesale</a>
+          <a href="#" style="font:500 13px/1 var(--font-ui);letter-spacing:.6px;text-transform:uppercase;color:var(--eth-grey-49)">Become a Partner</a>
+      </div>
+    </div>
+  </sc-if>
+</div>
+
+<section data-hero="1" style="display:flex;flex-wrap:wrap;min-height:clamp(520px,54vw,660px);background:#fff" data-screen-label="Hero">
+  <div data-hero-copy="1" style="flex:1 1 50%;min-width:340px;display:flex;flex-direction:column;justify-content:center;gap:20px;padding:clamp(32px,4.4vw,72px) clamp(22px,3.4vw,64px);padding-left:max(clamp(22px,3.4vw,64px),56px);background:var(--eth-black)">
+    <div style="display:flex;align-items:center;gap:9px">
+      <span style="display:flex;gap:2px;color:#F0B429">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.6.8-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.8z"></path></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.6.8-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.8z"></path></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.6.8-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.8z"></path></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.6.8-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.8z"></path></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.6.8-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.8z"></path></svg>
+      </span>
+      <span style="font:500 14px/1.4 var(--font-ui);color:#fff">4.96</span>
+      <span style="font:400 14px/1.4 var(--font-ui);color:var(--eth-grey-64)">(4,508 verified reviews)</span>
+    </div>
+    <h1 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(30px,3.7vw,54px);line-height:1.06;letter-spacing:-0.3px;color:#fff"><span data-cc-id="cc-1" style="white-space: nowrap;color:var(--eth-volt);">Creatine + Electrolytes.</span><br>Made For Everyday Athletes</h1>
+    <div style="margin:0;max-width:50ch;font:300 clamp(17px,1.6vw,21px)/1.5 var(--font-ui);color:#fff"><p data-om-id="074ae3c3:96" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; line-height: 1.5; margin: 0px; max-width: 50ch;">No BS clean hydration - PhD Formulated, third-party tested.</p></div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;padding-top:6px">
+      <a href="03%20Product%20page.dc.html" style="display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;background:var(--eth-volt);border:1px solid var(--eth-black);border-radius:3px;font:500 14px/1 var(--font-ui);letter-spacing:1.4px;text-transform:uppercase;color:var(--eth-black)" style-hover="background:#CFE700">Shop electrolytes + creatine</a>
+      <a href="04%20Starter%20Kit.dc.html" style="display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border:1px solid #fff;border-radius:3px;font:500 14px/1 var(--font-ui);letter-spacing:1.4px;text-transform:uppercase;color:#fff" style-hover="background:#fff;color:var(--eth-black)">Try the Starter Kit</a>
+    </div>
+    <p style="margin:0;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-64)">E-CELL™ delivery · 5g creatine · zero sugar</p>
+  </div>
+  <div data-hero-media="1" style="flex:1 1 50%;min-width:320px;position:relative;overflow:hidden;background:var(--eth-mist)">
+    <img src="assets/_xs-hero-lifestyle-5.jpg" alt="A woman sitting on the grass pouring an ETHLETE Raspberry Lemon stick into her water bottle" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:54% 40%">
+  </div>
+</section>
+
+<section style="background:var(--eth-bone);border-bottom:1px solid var(--eth-grey-82)" data-screen-label="Proof strip">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(26px,3vw,40px) clamp(20px,3vw,44px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(24px,3vw,52px)">
+      <div style="flex:1 1 260px;max-width:400px">
+        <p style="margin:0 0 8px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-confirm-green)">Every batch, verified</p>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(24px,2.6vw,34px);line-height:1.1;color:var(--eth-black);text-wrap:balance">Nothing to hide on the label.</h2>
+      </div>
+      <div style="flex:2 1 520px;display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:12px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;background:#fff;border:1px solid var(--eth-black)" style-hover="background:var(--eth-volt)">
+          <img src="assets/badge-lab-tested.png" alt="" style="width:64px;height:64px;object-fit:contain">
+          <span style="font:700 12px/1.3 var(--font-ui);letter-spacing:1px;text-transform:uppercase;text-align:center;color:var(--eth-black)">Third party tested</span>
+        </div><div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;background:#fff;border:1px solid var(--eth-black)" style-hover="background:var(--eth-volt)">
+          <img src="assets/badge-no-sugar.png" alt="" style="width:64px;height:64px;object-fit:contain">
+          <span style="font:700 12px/1.3 var(--font-ui);letter-spacing:1px;text-transform:uppercase;text-align:center;color:var(--eth-black)">No sugar</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;background:#fff;border:1px solid var(--eth-black)" style-hover="background:var(--eth-volt)">
+          <img src="assets/badge-plant-based.png" alt="" style="width:64px;height:64px;object-fit:contain">
+          <span style="font:700 12px/1.3 var(--font-ui);letter-spacing:1px;text-transform:uppercase;text-align:center;color:var(--eth-black)">Plant based</span>
+        </div>
+        
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;background:#fff;border:1px solid var(--eth-black)" style-hover="background:var(--eth-volt)">
+          <img src="assets/badge-non-gmo.png" alt="" style="width:64px;height:64px;object-fit:contain">
+          <span style="font:700 12px/1.3 var(--font-ui);letter-spacing:1px;text-transform:uppercase;text-align:center;color:var(--eth-black)">Vegan and Non–GMO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><section id="inside" style="display:flex;flex-wrap:wrap;background:var(--eth-mist);border-top:1px solid var(--eth-grey-82)" data-screen-label="What's inside">
+  <div style="flex:1 1 44%;min-width:300px;min-height:clamp(300px,32vw,520px);overflow:hidden;background:var(--eth-grey-92)">
+    <img src="assets/_xs-inside-open-packet-v3.jpg" alt="An opened ETHLETE Lemon Lime stick with its powder spilled on a white surface" style="width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block">
+  </div><div style="flex:1 1 46%;min-width:320px;display:flex;flex-direction:column;justify-content:center;gap:24px;padding:clamp(28px,4vw,56px)">
+    <div>
+      <p style="margin:0 0 10px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">What's inside</p>
+      <h2 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.2vw,40px);line-height:1.12;color:var(--eth-black);text-wrap:balance">No sugar. No fillers. No crash.</h2>
+      <p style="margin:10px 0 0;max-width:54ch;font:400 16px/1.55 var(--font-ui);color:var(--eth-ink)">Sweetened with monk fruit, hydrated with coconut water powder, and nothing else. Every number here is on the label — none of them rounded.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 24px">
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="font-family:var(--font-display);font-weight:700;font-size:clamp(24px,2.4vw,34px);line-height:1;color:var(--eth-confirm-green)">0g</span>
+        <span style="font:400 14px/1.3 var(--font-ui);color:var(--eth-grey-39)">Added sugar</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="font-family:var(--font-display);font-weight:700;font-size:clamp(24px,2.4vw,34px);line-height:1;color:var(--eth-confirm-green)">0</span>
+        <span style="font:400 14px/1.3 var(--font-ui);color:var(--eth-grey-39)">Artificial colours or fillers</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="font-family:var(--font-display);font-weight:700;font-size:clamp(24px,2.4vw,34px);line-height:1;color:var(--eth-black)">5g</span>
+        <span style="font:400 14px/1.3 var(--font-ui);color:var(--eth-grey-39)">Creatine monohydrate</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="font-family:var(--font-display);font-weight:700;font-size:clamp(24px,2.4vw,34px);line-height:1;color:var(--eth-black)">1,020mg</span>
+        <span style="font:400 14px/1.3 var(--font-ui);color:var(--eth-grey-39)">Electrolytes</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="font-family:var(--font-display);font-weight:700;font-size:clamp(24px,2.4vw,34px);line-height:1;color:var(--eth-black)">B6 · B12</span>
+        <span style="font:400 14px/1.3 var(--font-ui);color:var(--eth-grey-39)">Focus and fatigue</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="font-family:var(--font-display);font-weight:700;font-size:clamp(24px,2.4vw,34px);line-height:1;color:var(--eth-black)">Vit C</span>
+        <span style="font:400 14px/1.3 var(--font-ui);color:var(--eth-grey-39)">Immune function</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px">
+      <span style="padding:7px 12px;background:#fff;border:1px solid var(--eth-black);font:500 13px/1 var(--font-ui);color:var(--eth-black)">Monk fruit sweetened</span>
+      <span style="padding:7px 12px;background:#fff;border:1px solid var(--eth-black);font:500 13px/1 var(--font-ui);color:var(--eth-black)">Coconut water powder</span>
+      <span style="padding:7px 12px;background:#fff;border:1px solid var(--eth-black);font:500 13px/1 var(--font-ui);color:var(--eth-black)">Vegan and Non–GMO</span>
+    </div>
+    <a href="03%20Product%20page.dc.html#science" style="align-self:flex-start;font:500 14px/1 var(--font-ui);letter-spacing:1.4px;text-transform:uppercase;color:var(--eth-black);text-decoration:underline;text-underline-offset:5px">Read the full ingredient panel</a>
+  </div>
+  
+</section>
+
+
+
+<section ref="{{ paraSection }}" data-para="1" style="position:relative;height:220vh;background:var(--eth-bone);border-top:1px solid var(--eth-grey-82)" data-screen-label="Falling flavours">
+  <div data-para-sticky="1" style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;background-image:url(assets/_small-ed-22.jpg);background-size:cover;background-position:center">
+    <canvas ref="{{ scrubCanvas }}" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none;opacity:0;transition:opacity 220ms cubic-bezier(.25,.1,.25,1)"></canvas>
+    <div ref="{{ scrubFrames }}" aria-hidden="true" style="display:none">
+      <img src="assets/video/falling-frames/f00.webp" alt="">
+      <img src="assets/video/falling-frames/f01.webp" alt="">
+      <img src="assets/video/falling-frames/f02.webp" alt="">
+      <img src="assets/video/falling-frames/f03.webp" alt="">
+      <img src="assets/video/falling-frames/f04.webp" alt="">
+      <img src="assets/video/falling-frames/f05.webp" alt="">
+      <img src="assets/video/falling-frames/f06.webp" alt="">
+      <img src="assets/video/falling-frames/f07.webp" alt="">
+      <img src="assets/video/falling-frames/f08.webp" alt="">
+      <img src="assets/video/falling-frames/f09.webp" alt="">
+      <img src="assets/video/falling-frames/f10.webp" alt="">
+      <img src="assets/video/falling-frames/f11.webp" alt="">
+      <img src="assets/video/falling-frames/f12.webp" alt="">
+      <img src="assets/video/falling-frames/f13.webp" alt="">
+      <img src="assets/video/falling-frames/f14.webp" alt="">
+      <img src="assets/video/falling-frames/f15.webp" alt="">
+      <img src="assets/video/falling-frames/f16.webp" alt="">
+      <img src="assets/video/falling-frames/f17.webp" alt="">
+      <img src="assets/video/falling-frames/f18.webp" alt="">
+      <img src="assets/video/falling-frames/f19.webp" alt="">
+      <img src="assets/video/falling-frames/f20.webp" alt="">
+      <img src="assets/video/falling-frames/f21.webp" alt="">
+      <img src="assets/video/falling-frames/f22.webp" alt="">
+      <img src="assets/video/falling-frames/f23.webp" alt="">
+      <img src="assets/video/falling-frames/f24.webp" alt="">
+      <img src="assets/video/falling-frames/f25.webp" alt="">
+      <img src="assets/video/falling-frames/f26.webp" alt="">
+      <img src="assets/video/falling-frames/f27.webp" alt="">
+      <img src="assets/video/falling-frames/f28.webp" alt="">
+      <img src="assets/video/falling-frames/f29.webp" alt="">
+    </div>
+    
+    <div style="position:relative;z-index:2;max-width:620px;margin:0 clamp(20px,3vw,44px);padding:clamp(24px,3vw,40px);background:rgba(255,255,255,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid var(--eth-black);text-align:center;pointer-events:none">
+      <p style="margin:0 0 12px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">NO ARTIFICIAL ANYTHING</p>
+      <h2 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(30px,4.4vw,58px);line-height:1.08;color:var(--eth-ink);text-wrap:balance">Fuel Your Everyday</h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="value" style="padding:clamp(30px,3.6vw,48px) clamp(20px,3vw,44px);background:#fff" data-screen-label="The value math">
+  <div style="max-width:760px;margin:0 auto">
+    <div style="margin-bottom:22px">
+      <p style="margin:0 0 8px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">The value math</p>
+      <h2 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(26px,3.2vw,40px);line-height:1.12;color:var(--eth-black)">Three supplements. One price.</h2>
+      <p style="margin:10px 0 0;max-width:44ch;font:400 16px/1.5 var(--font-ui);color:var(--eth-ink)">Creatine, electrolytes and vitamins, priced against buying all three separately — three purchases, three shipments, three things to remember every morning. This is one.</p>
+    </div>
+    <div style="border:1px solid var(--eth-black);background:#fff">
+      <div style="display:flex;align-items:center;gap:16px;padding:12px 16px;border-bottom:1px solid var(--eth-grey-82)">
+        <span style="flex:0 0 56px;width:56px;height:56px;overflow:hidden;background:var(--eth-mist);border:1px solid var(--eth-grey-82)">
+          <img src="assets/raw-electrolytes.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+        </span>
+        <div style="flex:1 1 auto;display:flex;flex-direction:column;gap:2px">
+          <span style="font:500 16px/1.35 var(--font-ui);color:var(--eth-black)">Electrolytes</span>
+          <span style="font:400 14px/1.35 var(--font-ui);color:var(--eth-grey-39)">Sodium, potassium, magnesium, premium electrolyte stick</span>
+        </div>
+        <span style="font:500 16px/1.4 var(--font-ui);color:var(--eth-black);white-space:nowrap">$1.50 a serving</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:12px 16px;border-bottom:1px solid var(--eth-grey-82)">
+        <span style="flex:0 0 56px;width:56px;height:56px;overflow:hidden;background:var(--eth-mist);border:1px solid var(--eth-grey-82)">
+          <img src="assets/raw-creatine.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+        </span>
+        <div style="flex:1 1 auto;display:flex;flex-direction:column;gap:2px">
+          <span style="font:500 16px/1.35 var(--font-ui);color:var(--eth-black)">Creatine monohydrate</span>
+          <span style="font:400 14px/1.35 var(--font-ui);color:var(--eth-grey-39)">5g, premium single-serve packet</span>
+        </div>
+        <span style="font:500 16px/1.4 var(--font-ui);color:var(--eth-black);white-space:nowrap">$1.00 a serving</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:12px 16px;border-bottom:1px solid var(--eth-grey-82)">
+        <span style="flex:0 0 56px;width:56px;height:56px;overflow:hidden;background:var(--eth-mist);border:1px solid var(--eth-grey-82)">
+          <img src="assets/raw-vitamins.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+        </span>
+        <div style="flex:1 1 auto;display:flex;flex-direction:column;gap:2px">
+          <span style="font:500 16px/1.35 var(--font-ui);color:var(--eth-black)">B + C vitamins</span>
+          <span style="font:400 14px/1.35 var(--font-ui);color:var(--eth-grey-39)">B6, B12, Vitamin C, premium multivitamin</span>
+        </div>
+        <span style="font:500 16px/1.4 var(--font-ui);color:var(--eth-black);white-space:nowrap">$0.50 a serving</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px;border-bottom:1px solid var(--eth-black);background:var(--eth-mist)">
+        <span style="font:500 16px/1.4 var(--font-ui);color:var(--eth-black)">Bought separately, premium brands</span>
+        <span style="font:500 16px/1.4 var(--font-ui);color:var(--eth-black)">$3.00 a serving</span>
+      </div>
+      <div data-value-panel="1" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:26px 20px;background:var(--eth-volt)">
+        <div style="display:flex;align-items:center;gap:18px">
+          <div style="flex:0 0 84px;width:84px;height:84px;overflow:hidden;background:#fff;border:1px solid var(--eth-black)">
+            <img src="assets/_xs-peach-mango-single.jpg" alt="An ETHLETE Electrolytes + Creatine stick pack" style="width:100%;height:100%;object-fit:contain;display:block">
+          </div>
+          <span style="font-family:var(--font-display);font-weight:700;font-size:clamp(20px,2.2vw,26px);line-height:1.1;color:var(--eth-black)">ETHLETE — all three, one stick</span>
+        </div>
+        <div data-value-price="1" style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
+          <span data-value-badge="1" style="align-self:flex-end;padding:4px 8px;background:var(--eth-black);font:700 12px/1.3 var(--font-ui);letter-spacing:1px;text-transform:uppercase;color:var(--eth-volt)">Save 61%</span>
+          <span style="font-family:var(--font-display);font-weight:700;font-size:clamp(38px,4.6vw,58px);line-height:1;color:var(--eth-black)">$1.17</span>
+          <span style="font:500 15px/1.4 var(--font-ui);color:var(--eth-black)">a stick, subscribed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><section id="flavors" style="padding:clamp(36px,5vw,64px) clamp(20px,3vw,44px);background:#fff" data-screen-label="Flavors and where to start">
+  <div style="max-width:1440px;margin:0 auto">
+    <div style="margin-bottom:30px">
+      <p style="margin:0 0 10px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">Flavors and where to start</p>
+      <h2 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.6vw,46px);line-height:1.14;color:var(--eth-black)">Pick a flavour, or try all three.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(158px,100%),1fr));gap:clamp(16px,2.4vw,28px)">
+      <a href="03%20Product%20page.dc.html?flavor=peach-mango" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+        <div style="width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--eth-mist)">
+          <img src="assets/_xs-flavor-peach-mango.jpg" alt="An ETHLETE Peach Mango stick surrounded by fresh peaches and mango" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <p style="margin:0;font:500 20px/1.3 var(--font-ui);color:var(--eth-black)">Peach Mango</p>
+        <p style="margin:0;font:400 14px/1.45 var(--font-ui);color:var(--eth-grey-39)">Soft, round, low tartness</p>
+        <span style="font:500 12px/1 var(--font-ui);letter-spacing:1px;text-transform:uppercase;color:var(--eth-confirm-green)">Best seller</span>
+        <span style="white-space:nowrap;font:500 clamp(10px,2.4vw,13px)/1.3 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-black);text-decoration:underline;text-underline-offset:5px">Shop Peach Mango →</span>
+      </a>
+      <a href="03%20Product%20page.dc.html?flavor=raspberry-lemon" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+        <div style="width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--eth-mist)">
+          <img src="assets/_xs-flavor-raspberry-lemon.jpg" alt="An ETHLETE Raspberry Lemon stick nestled among fresh raspberries and lemons" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <p style="margin:0;font:500 20px/1.3 var(--font-ui);color:var(--eth-black)">Raspberry Lemon</p>
+        <p style="margin:0;font:400 14px/1.45 var(--font-ui);color:var(--eth-grey-39)">Tart, the least sweet of the three</p>
+        <span style="font:500 12px/1 var(--font-ui);letter-spacing:1px;text-transform:uppercase;color:var(--eth-grey-39)">Staff pick</span>
+        <span style="white-space:nowrap;font:500 clamp(10px,2.4vw,13px)/1.3 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-black);text-decoration:underline;text-underline-offset:5px">Shop Raspberry Lemon →</span>
+      </a>
+      <a href="03%20Product%20page.dc.html?flavor=lemon-lime" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+        <div style="width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--eth-mist)">
+          <img src="assets/_xs-flavor-lemon-lime.jpg" alt="An ETHLETE Lemon Lime stick surrounded by sliced lemons and limes" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <p style="margin:0;font:500 20px/1.3 var(--font-ui);color:var(--eth-black)">Lemon Lime</p>
+        <p style="margin:0;font:400 14px/1.45 var(--font-ui);color:var(--eth-grey-39)">Clean and sharp, closest to plain</p>
+        <span style="font:500 12px/1 var(--font-ui);letter-spacing:1px;text-transform:uppercase;color:var(--eth-grey-39)">The classic</span>
+        <span style="white-space:nowrap;font:500 clamp(10px,2.4vw,13px)/1.3 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-black);text-decoration:underline;text-underline-offset:5px">Shop Lemon Lime →</span>
+      </a>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;opacity:.5">
+        <div style="width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--eth-mist);filter:grayscale(1)">
+          <img src="assets/_xs-flavor-crisp-apple.jpg" alt="Fresh green apples, whole and halved, for the upcoming Crisp Apple flavour" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <p style="margin:0;font:500 20px/1.3 var(--font-ui);color:var(--eth-grey-49)">Crisp Apple</p>
+        <p style="margin:0;font:400 14px/1.45 var(--font-ui);color:var(--eth-grey-39)">Clean, tart, barely sweet</p>
+        <span style="padding:4px 10px;background:var(--eth-grey-49);font:700 11px/1.3 var(--font-ui);letter-spacing:1px;text-transform:uppercase;color:#fff">Coming soon</span>
+      </div>
+    </div>
+    <a href="03%20Product%20page.dc.html?product=variety-pack" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(24px,3vw,44px);margin:clamp(32px,4vw,48px) auto 0;max-width:960px;padding:clamp(20px,2.4vw,32px) clamp(24px,3vw,40px);border:1px solid var(--eth-black);text-align:left">
+      <div style="flex:0 0 auto;width:min(220px,40vw);aspect-ratio:4/3;overflow:hidden;background:#fff;padding:10px">
+        <img src="https://www.ethlete.com/cdn/shop/files/CREATINE_25.png?v=1771345254&amp;width=3000" alt="The ETHLETE 12 Stick Variety Pack box with four sticks of each flavour" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block">
+      </div>
+      <div style="flex:1 1 280px;display:flex;flex-direction:column;gap:6px">
+        <p style="margin:0;font:500 12px/1 var(--font-ui);letter-spacing:1px;text-transform:uppercase;color:var(--eth-grey-49)">Not sure where to start</p>
+        <p style="margin:0;font:500 24px/1.3 var(--font-ui);color:var(--eth-black)">12 Stick Variety Pack</p>
+        <p style="margin:0;max-width:44ch;font:400 15px/1.45 var(--font-ui);color:var(--eth-grey-39)">Four of each flavour. Try all three before you commit to one.</p>
+      </div>
+      <div style="flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:10px">
+        <span style="font-family:var(--font-display);font-weight:700;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--eth-black)">$35</span>
+        <span style="padding:9px 20px;background:var(--eth-volt);border:1px solid var(--eth-black);border-radius:3px;font:500 13px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-black)">Start here</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section style="padding:clamp(36px,5vw,64px) clamp(20px,3vw,44px);background:var(--eth-bone);border-top:1px solid var(--eth-grey-82)" data-screen-label="How it works">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="margin-bottom:34px">
+      <p style="margin:0 0 10px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">How it works</p>
+      <h2 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.6vw,46px);line-height:1.14;color:var(--eth-black)">One stick, any bottle.</h2>
+    </div>
+    <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px">
+      <div style="display:flex;flex-direction:column;gap:12px;padding-top:22px;border-top:2px solid var(--eth-black)">
+        <span style="position:absolute;margin-top:-31px;width:18px;height:18px;border-radius:50%;background:var(--eth-black)"></span>
+        <div style="width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--eth-mist)">
+          <img src="assets/_xs-step-tear-stick-v2.jpg" alt="Two hands tearing open an ETHLETE Raspberry Lemon stick over fresh raspberries and lemons" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block">
+        </div>
+        <p style="margin:0;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-49)">Step one</p>
+        <p style="margin:0;font:500 20px/1.3 var(--font-ui);color:var(--eth-black)">Tear one stick</p>
+        <p style="margin:0;font:400 16px/1.55 var(--font-ui);color:var(--eth-ink)">One serving, pre-measured. No scoop, no tub, nothing to level off.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding-top:22px;border-top:2px solid var(--eth-black)">
+        <span style="position:absolute;margin-top:-31px;width:18px;height:18px;border-radius:50%;background:var(--eth-black)"></span>
+        <div style="width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--eth-mist)">
+          <img src="assets/_xs2-lifestyle-brick-2.jpg" alt="A hand pouring a Raspberry Lemon stick into a tall glass of water" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block">
+        </div>
+        <p style="margin:0;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-49)">Step two</p>
+        <p style="margin:0;font:500 20px/1.3 var(--font-ui);color:var(--eth-black)">Any bottle, cold water</p>
+        <p style="margin:0;font:400 16px/1.55 var(--font-ui);color:var(--eth-ink)">Your gym bottle, a hotel glass, the cup on your desk.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding-top:22px;border-top:2px solid var(--eth-black)">
+        <span style="position:absolute;margin-top:-31px;width:18px;height:18px;border-radius:50%;background:var(--eth-black)"></span>
+        <div style="width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--eth-mist)">
+          <img src="assets/_xs2-lifestyle-brick-1.jpg" alt="Three mixed ETHLETE drinks on a rattan tray beside the pool" style="width:100%;height:100%;object-fit:cover;object-position:50% 60%;display:block">
+        </div>
+        <p style="margin:0;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-49)">Step three</p>
+        <p style="margin:0;font:500 20px/1.3 var(--font-ui);color:var(--eth-black)">Stir for ten seconds, drink</p>
+        <p style="margin:0;font:400 16px/1.55 var(--font-ui);color:var(--eth-ink)">No shaker to wash and no grit at the bottom. Gym, travel, desk.</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:40px;text-align:center">
+      <a href="03%20Product%20page.dc.html" style="display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;background:var(--eth-volt);border:1px solid var(--eth-black);border-radius:3px;font:500 14px/1 var(--font-ui);letter-spacing:1.4px;text-transform:uppercase;color:var(--eth-black)" style-hover="background:#CFE700">Shop electrolytes + creatine</a>
+      <span style="font:400 15px/1.5 var(--font-ui);color:var(--eth-grey-39)">30 sticks from $48.00 · $35.00 subscribed</span>
+    </div>
+  </div>
+</section>
+
+<section style="display:flex;flex-wrap:wrap;background:#fff" data-screen-label="Founder story">
+  <div style="flex:1 1 42%;min-width:300px;min-height:clamp(320px,34vw,480px);overflow:hidden;background:var(--eth-mist)">
+    <img src="assets/_xs-founders-pair.jpg" alt="Shelbi and Geoff, the husband-and-wife founders of ETHLETE" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block">
+  </div>
+  <div style="flex:1 1 58%;min-width:340px;display:flex;flex-direction:column;justify-content:center;gap:18px;padding:clamp(32px,4.4vw,64px)">
+    <p style="margin:0;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">Founder story</p>
+    <blockquote style="margin:0;padding-left:20px;border-left:3px solid var(--eth-volt);font-family:var(--font-display);font-weight:700;font-size:clamp(22px,2.6vw,32px);line-height:1.3;color:var(--eth-black);text-wrap:balance">"It's so much easier than you think to slap a label on a product and call it good. We've experienced this and are determined to create a brand that lives up to what it claims to be."</blockquote>
+    <p style="margin:0;padding-left:23px;font:500 13px/1 var(--font-ui);letter-spacing:1px;text-transform:uppercase;color:var(--eth-grey-49)">Shelbi &amp; Geoff — Founders, ETHLETE</p>
+  </div>
+</section>
+
+<section id="compare" style="padding:clamp(36px,5vw,64px) clamp(20px,3vw,44px);background:var(--eth-mist);border-top:1px solid var(--eth-grey-82)" data-screen-label="ETHLETE vs Them">
+  <div style="max-width:1000px;margin:0 auto">
+    <p style="margin:0 0 10px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">The comparison</p>
+    <h2 style="margin:0 0 10px;font-family:var(--font-display);font-weight:700;font-size:clamp(26px,3.2vw,40px);line-height:1.14;color:var(--eth-black)">ETHLETE vs. Them.</h2>
+    <p style="margin:0 0 26px;max-width:60ch;font:400 16px/1.55 var(--font-ui);color:var(--eth-ink);text-wrap:pretty">Same 16 oz of water. Not the same stick. Read the label against a standard electrolyte packet and the difference is not the marketing — it is what is missing from theirs.</p>
+
+    <div style="border:1px solid var(--eth-black);background:#fff">
+
+      <div style="display:flex;flex-wrap:wrap;align-items:stretch">
+        <div style="flex:1 1 210px;display:flex;align-items:flex-end;padding:14px clamp(14px,1.6vw,22px) 12px;font:500 11px/1.2 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-49)">Per stick</div>
+        <div style="flex:1.35 1 300px;display:flex;align-items:stretch;margin-left:-1px">
+          <div style="flex:1 1 0;display:flex;flex-direction:column;justify-content:flex-end;gap:5px;padding:14px clamp(14px,1.6vw,22px) 12px;background:var(--eth-volt);border-left:1px solid var(--eth-black)">
+            <img src="assets/logo-ethlete.png" alt="ETHLETE" style="align-self:flex-start;height:12px;width:auto;max-width:100%;object-fit:contain;display:block">
+            <span style="font:400 11px/1.3 var(--font-ui);color:var(--eth-black);opacity:.72">Electrolytes + Creatine</span>
+          </div>
+          <div style="flex:1 1 0;display:flex;flex-direction:column;justify-content:flex-end;gap:5px;padding:14px clamp(14px,1.6vw,22px) 12px;background:var(--eth-mist);border-left:1px solid var(--eth-black)">
+            <span style="font:700 13px/1 var(--font-ui);letter-spacing:1.4px;text-transform:uppercase;color:var(--eth-grey-49)">Them</span>
+            <span style="font:400 11px/1.3 var(--font-ui);color:var(--eth-grey-39)">Standard electrolyte stick</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:9px clamp(14px,1.6vw,22px);background:var(--eth-bone);border-top:1px solid var(--eth-black);font:500 11px/1.2 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">What is in it</div>
+      <div style="display:flex;flex-wrap:wrap;border-top:1px solid var(--eth-grey-82)">
+        <div style="flex:1 1 210px;display:flex;align-items:center;padding:14px clamp(14px,1.6vw,22px);font:500 clamp(13px,1.1vw,15px)/1.4 var(--font-ui);color:var(--eth-black)">Creatine</div>
+        <div style="flex:1.35 1 300px;display:flex;align-items:stretch;margin-left:-1px">
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;gap:8px;padding:14px clamp(14px,1.6vw,22px);border-left:1px solid var(--eth-black);font:500 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-black)"><x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.Icon" hint-size="16px,16px" name="check-circle" size="{{ 16 }}" color="var(--eth-confirm-green)" style="margin-top:2px"></x-import><span>Clinically supported dose, every stick</span></div>
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;padding:14px clamp(14px,1.6vw,22px);background:var(--eth-mist);border-left:1px solid var(--eth-black);font:400 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-grey-39)"><span>None</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;border-top:1px solid var(--eth-grey-82)">
+        <div style="flex:1 1 210px;display:flex;align-items:center;padding:14px clamp(14px,1.6vw,22px);font:500 clamp(13px,1.1vw,15px)/1.4 var(--font-ui);color:var(--eth-black)">Vitamins</div>
+        <div style="flex:1.35 1 300px;display:flex;align-items:stretch;margin-left:-1px">
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;gap:8px;padding:14px clamp(14px,1.6vw,22px);border-left:1px solid var(--eth-black);font:500 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-black)"><x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.Icon" hint-size="16px,16px" name="check-circle" size="{{ 16 }}" color="var(--eth-confirm-green)" style="margin-top:2px"></x-import><span>B6, B12 and C</span></div>
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;padding:14px clamp(14px,1.6vw,22px);background:var(--eth-mist);border-left:1px solid var(--eth-black);font:400 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-grey-39)"><span>Rarely included</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;border-top:1px solid var(--eth-grey-82)">
+        <div style="flex:1 1 210px;display:flex;align-items:center;padding:14px clamp(14px,1.6vw,22px);font:500 clamp(13px,1.1vw,15px)/1.4 var(--font-ui);color:var(--eth-black)">Sodium source</div>
+        <div style="flex:1.35 1 300px;display:flex;align-items:stretch;margin-left:-1px">
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;gap:8px;padding:14px clamp(14px,1.6vw,22px);border-left:1px solid var(--eth-black);font:500 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-black)"><x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.Icon" hint-size="16px,16px" name="check-circle" size="{{ 16 }}" color="var(--eth-confirm-green)" style="margin-top:2px"></x-import><span>Pink Himalayan salt</span></div>
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;padding:14px clamp(14px,1.6vw,22px);background:var(--eth-mist);border-left:1px solid var(--eth-black);font:400 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-grey-39)"><span>Refined sodium chloride</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;border-top:1px solid var(--eth-grey-82)">
+        <div style="flex:1 1 210px;display:flex;align-items:center;padding:14px clamp(14px,1.6vw,22px);font:500 clamp(13px,1.1vw,15px)/1.4 var(--font-ui);color:var(--eth-black)">Potassium</div>
+        <div style="flex:1.35 1 300px;display:flex;align-items:stretch;margin-left:-1px">
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;gap:8px;padding:14px clamp(14px,1.6vw,22px);border-left:1px solid var(--eth-black);font:500 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-black)"><x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.Icon" hint-size="16px,16px" name="check-circle" size="{{ 16 }}" color="var(--eth-confirm-green)" style="margin-top:2px"></x-import><span>Potassium citrate</span></div>
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;padding:14px clamp(14px,1.6vw,22px);background:var(--eth-mist);border-left:1px solid var(--eth-black);font:400 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-grey-39)"><span>Low dose or skipped</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;border-top:1px solid var(--eth-grey-82)">
+        <div style="flex:1 1 210px;display:flex;align-items:center;padding:14px clamp(14px,1.6vw,22px);font:500 clamp(13px,1.1vw,15px)/1.4 var(--font-ui);color:var(--eth-black)">Magnesium</div>
+        <div style="flex:1.35 1 300px;display:flex;align-items:stretch;margin-left:-1px">
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;gap:8px;padding:14px clamp(14px,1.6vw,22px);border-left:1px solid var(--eth-black);font:500 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-black)"><x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.Icon" hint-size="16px,16px" name="check-circle" size="{{ 16 }}" color="var(--eth-confirm-green)" style="margin-top:2px"></x-import><span>Magnesium glycinate</span></div>
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;padding:14px clamp(14px,1.6vw,22px);background:var(--eth-mist);border-left:1px solid var(--eth-black);font:400 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-grey-39)"><span>Oxide, if any</span></div>
+        </div>
+      </div>
+      <div style="padding:9px clamp(14px,1.6vw,22px);background:var(--eth-bone);border-top:1px solid var(--eth-black);font:500 11px/1.2 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">What is not in it</div>
+      <div style="display:flex;flex-wrap:wrap;border-top:1px solid var(--eth-grey-82)">
+        <div style="flex:1 1 210px;display:flex;align-items:center;padding:14px clamp(14px,1.6vw,22px);font:500 clamp(13px,1.1vw,15px)/1.4 var(--font-ui);color:var(--eth-black)">Sweetened with</div>
+        <div style="flex:1.35 1 300px;display:flex;align-items:stretch;margin-left:-1px">
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;gap:8px;padding:14px clamp(14px,1.6vw,22px);border-left:1px solid var(--eth-black);font:500 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-black)"><x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.Icon" hint-size="16px,16px" name="check-circle" size="{{ 16 }}" color="var(--eth-confirm-green)" style="margin-top:2px"></x-import><span>Monk fruit and coconut water powder</span></div>
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;padding:14px clamp(14px,1.6vw,22px);background:var(--eth-mist);border-left:1px solid var(--eth-black);font:400 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-grey-39)"><span>Sucralose or stevia blends</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;border-top:1px solid var(--eth-grey-82)">
+        <div style="flex:1 1 210px;display:flex;align-items:center;padding:14px clamp(14px,1.6vw,22px);font:500 clamp(13px,1.1vw,15px)/1.4 var(--font-ui);color:var(--eth-black)">Added sugar</div>
+        <div style="flex:1.35 1 300px;display:flex;align-items:stretch;margin-left:-1px">
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;gap:8px;padding:14px clamp(14px,1.6vw,22px);border-left:1px solid var(--eth-black);font:500 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-black)"><x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.Icon" hint-size="16px,16px" name="check-circle" size="{{ 16 }}" color="var(--eth-confirm-green)" style="margin-top:2px"></x-import><span>None</span></div>
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;padding:14px clamp(14px,1.6vw,22px);background:var(--eth-mist);border-left:1px solid var(--eth-black);font:400 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-grey-39)"><span>Common</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;border-top:1px solid var(--eth-grey-82)">
+        <div style="flex:1 1 210px;display:flex;align-items:center;padding:14px clamp(14px,1.6vw,22px);font:500 clamp(13px,1.1vw,15px)/1.4 var(--font-ui);color:var(--eth-black)">Artificial colors and fillers</div>
+        <div style="flex:1.35 1 300px;display:flex;align-items:stretch;margin-left:-1px">
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;gap:8px;padding:14px clamp(14px,1.6vw,22px);border-left:1px solid var(--eth-black);font:500 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-black)"><x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.Icon" hint-size="16px,16px" name="check-circle" size="{{ 16 }}" color="var(--eth-confirm-green)" style="margin-top:2px"></x-import><span>None</span></div>
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;padding:14px clamp(14px,1.6vw,22px);background:var(--eth-mist);border-left:1px solid var(--eth-black);font:400 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-grey-39)"><span>Common</span></div>
+        </div>
+      </div>
+      <div style="padding:9px clamp(14px,1.6vw,22px);background:var(--eth-bone);border-top:1px solid var(--eth-black);font:500 11px/1.2 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">Proof</div>
+      <div style="display:flex;flex-wrap:wrap;border-top:1px solid var(--eth-grey-82)">
+        <div style="flex:1 1 210px;display:flex;align-items:center;padding:14px clamp(14px,1.6vw,22px);font:500 clamp(13px,1.1vw,15px)/1.4 var(--font-ui);color:var(--eth-black)">Third party tested</div>
+        <div style="flex:1.35 1 300px;display:flex;align-items:stretch;margin-left:-1px">
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;gap:8px;padding:14px clamp(14px,1.6vw,22px);border-left:1px solid var(--eth-black);font:500 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-black)"><x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.Icon" hint-size="16px,16px" name="check-circle" size="{{ 16 }}" color="var(--eth-confirm-green)" style="margin-top:2px"></x-import><span>Yes</span></div>
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;padding:14px clamp(14px,1.6vw,22px);background:var(--eth-mist);border-left:1px solid var(--eth-black);font:400 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-grey-39)"><span>Not always</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;border-top:1px solid var(--eth-grey-82)">
+        <div style="flex:1 1 210px;display:flex;align-items:center;padding:14px clamp(14px,1.6vw,22px);font:500 clamp(13px,1.1vw,15px)/1.4 var(--font-ui);color:var(--eth-black)">Vegan, gluten-free, keto, Non–GMO</div>
+        <div style="flex:1.35 1 300px;display:flex;align-items:stretch;margin-left:-1px">
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;gap:8px;padding:14px clamp(14px,1.6vw,22px);border-left:1px solid var(--eth-black);font:500 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-black)"><x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.Icon" hint-size="16px,16px" name="check-circle" size="{{ 16 }}" color="var(--eth-confirm-green)" style="margin-top:2px"></x-import><span>All four</span></div>
+          <div style="flex:1 1 0;display:flex;align-items:flex-start;padding:14px clamp(14px,1.6vw,22px);background:var(--eth-mist);border-left:1px solid var(--eth-black);font:400 clamp(13px,1.1vw,15px)/1.45 var(--font-ui);color:var(--eth-grey-39)"><span>Varies</span></div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:clamp(18px,2vw,24px) clamp(14px,1.6vw,22px);border-top:1px solid var(--eth-black);background:var(--eth-black)">
+        <p style="margin:0;max-width:22ch;font-family:var(--font-display);font-weight:700;font-size:clamp(18px,1.9vw,24px);line-height:1.18;color:#fff">No sugar. No artificial fillers. No crash.</p>
+        <a href="03%20Product%20page.dc.html" style="display:inline-flex;align-items:center;justify-content:center;flex:1 1 240px;min-height:52px;padding:0 26px;background:var(--eth-volt);border:1px solid var(--eth-black);font:500 14px/1 var(--font-ui);letter-spacing:1.4px;text-transform:uppercase;color:var(--eth-black);text-align:center" style-hover="background:#CFE700">Upgrade your hydration</a>
+      </div>
+    </div>
+
+    <p style="margin:16px 0 0;font:400 12px/1.5 var(--font-ui);color:var(--eth-grey-39)">“Them” describes a standard electrolyte stick in the category, not a named brand. [PLACEHOLDER — legal to sign off on the competitor column before publish.]</p>
+  </div>
+</section><section style="padding:clamp(36px,5vw,64px) 0;background:var(--eth-black)" data-screen-label="Community">
+  <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,3vw,44px)">
+    <p style="margin:0 0 10px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-volt)">Community</p>
+    <h2 style="margin:0 0 8px;font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.6vw,46px);line-height:1.14;color:#fff">Run clubs, HYROX, everyday athletes.</h2>
+    <p style="margin:0 0 28px;max-width:60ch;font:400 16px/1.55 var(--font-ui);color:var(--eth-grey-64)">ETHLETEs in action...</p>
+    <div style="display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px">
+      <div style="flex:0 0 clamp(190px,19vw,252px);scroll-snap-align:start;position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--eth-ink-10)">
+        <video data-src="assets/video/sequence-147-sm.webm" poster="assets/_small-ed-04.jpg" data-lazy-video="1" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" controls="{{ false }}" preload="none" data-ugc-video="1" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block"></video>
+        <button data-sound="off" onClick="{{ toggleSound }}" aria-label="Toggle sound" style="position:absolute;top:10px;right:10px;padding:5px 9px;background:rgba(0,0,0,.55);border:0;font:500 11px/1 var(--font-ui);letter-spacing:.6px;text-transform:uppercase;color:#fff;cursor:pointer">Tap for sound</button>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:12px;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.7) 100%)">
+          <p style="margin:0;font:500 14px/1.3 var(--font-ui);color:#fff">@ethlete</p>
+          <p style="margin:2px 0 0;font:400 12px/1.35 var(--font-ui);color:var(--eth-grey-64)">Saturday run club</p>
+        </div>
+      </div>
+      <div style="flex:0 0 clamp(190px,19vw,252px);scroll-snap-align:start;position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--eth-ink-10)">
+        <video data-src="assets/video/creator-leah-sm.webm" poster="assets/_small-ed-07.jpg" data-lazy-video="1" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" controls="{{ false }}" preload="none" data-ugc-video="1" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block"></video>
+        <button data-sound="off" onClick="{{ toggleSound }}" aria-label="Toggle sound" style="position:absolute;top:10px;right:10px;padding:5px 9px;background:rgba(0,0,0,.55);border:0;font:500 11px/1 var(--font-ui);letter-spacing:.6px;text-transform:uppercase;color:#fff;cursor:pointer">Tap for sound</button>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:12px;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.7) 100%)">
+          <p style="margin:0;font:500 14px/1.3 var(--font-ui);color:#fff">@leah_txreal</p>
+          <p style="margin:2px 0 0;font:400 12px/1.35 var(--font-ui);color:var(--eth-grey-64)">Morning routine</p>
+        </div>
+      </div>
+      <div style="flex:0 0 clamp(190px,19vw,252px);scroll-snap-align:start;position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--eth-ink-10)">
+        <video data-src="assets/video/video-01-sm.webm" poster="assets/_small-ed-09.jpg" data-lazy-video="1" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" controls="{{ false }}" preload="none" data-ugc-video="1" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block"></video>
+        <button data-sound="off" onClick="{{ toggleSound }}" aria-label="Toggle sound" style="position:absolute;top:10px;right:10px;padding:5px 9px;background:rgba(0,0,0,.55);border:0;font:500 11px/1 var(--font-ui);letter-spacing:.6px;text-transform:uppercase;color:#fff;cursor:pointer">Tap for sound</button>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:12px;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.7) 100%)">
+          <p style="margin:0;font:500 14px/1.3 var(--font-ui);color:#fff">@ethlete</p>
+          <p style="margin:2px 0 0;font:400 12px/1.35 var(--font-ui);color:var(--eth-grey-64)">HYROX heat, Dallas</p>
+        </div>
+      </div>
+      <div style="flex:0 0 clamp(190px,19vw,252px);scroll-snap-align:start;position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--eth-ink-10)">
+        <video data-src="assets/video/creator-leonard-sm.webm" poster="assets/_small-ed-12.jpg" data-lazy-video="1" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" controls="{{ false }}" preload="none" data-ugc-video="1" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block"></video>
+        <button data-sound="off" onClick="{{ toggleSound }}" aria-label="Toggle sound" style="position:absolute;top:10px;right:10px;padding:5px 9px;background:rgba(0,0,0,.55);border:0;font:500 11px/1 var(--font-ui);letter-spacing:.6px;text-transform:uppercase;color:#fff;cursor:pointer">Tap for sound</button>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:12px;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.7) 100%)">
+          <p style="margin:0;font:500 14px/1.3 var(--font-ui);color:#fff">@leonardbadboygarcia</p>
+          <p style="margin:2px 0 0;font:400 12px/1.35 var(--font-ui);color:var(--eth-grey-64)">Post-lift</p>
+        </div>
+      </div>
+      <div style="flex:0 0 clamp(190px,19vw,252px);scroll-snap-align:start;position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--eth-ink-10)">
+        <video data-src="assets/video/sequence-148-sm.webm" poster="assets/_small-ed-22.jpg" data-lazy-video="1" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" controls="{{ false }}" preload="none" data-ugc-video="1" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block"></video>
+        <button data-sound="off" onClick="{{ toggleSound }}" aria-label="Toggle sound" style="position:absolute;top:10px;right:10px;padding:5px 9px;background:rgba(0,0,0,.55);border:0;font:500 11px/1 var(--font-ui);letter-spacing:.6px;text-transform:uppercase;color:#fff;cursor:pointer">Tap for sound</button>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:12px;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.7) 100%)">
+          <p style="margin:0;font:500 14px/1.3 var(--font-ui);color:#fff">@ethlete</p>
+          <p style="margin:2px 0 0;font:400 12px/1.35 var(--font-ui);color:var(--eth-grey-64)">Pre-workout, 6am</p>
+        </div>
+      </div>
+      <div style="flex:0 0 clamp(190px,19vw,252px);scroll-snap-align:start;position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--eth-ink-10)">
+        <video data-src="assets/video/video-aug-04-sm.webm" poster="assets/_xs-studio-08914.jpg" data-lazy-video="1" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" controls="{{ false }}" preload="none" data-ugc-video="1" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block"></video>
+        <button data-sound="off" onClick="{{ toggleSound }}" aria-label="Toggle sound" style="position:absolute;top:10px;right:10px;padding:5px 9px;background:rgba(0,0,0,.55);border:0;font:500 11px/1 var(--font-ui);letter-spacing:.6px;text-transform:uppercase;color:#fff;cursor:pointer">Tap for sound</button>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:12px;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.7) 100%)">
+          <p style="margin:0;font:500 14px/1.3 var(--font-ui);color:#fff">@ethlete</p>
+          <p style="margin:2px 0 0;font:400 12px/1.35 var(--font-ui);color:var(--eth-grey-64)">Rooftop session</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(36px,5vw,64px) clamp(20px,3vw,44px);background:var(--eth-bone)" data-screen-label="Reviews">
+  <div style="max-width:1440px;margin:0 auto;text-align:center">
+    <p style="margin:0 0 10px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">4,508 verified reviews</p>
+    <h2 style="margin:0 0 14px;font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.6vw,46px);line-height:1.14;color:var(--eth-black)">Everyday athletes love ETHLETE.</h2>
+    <div style="display:inline-flex;margin-bottom:30px">
+      <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.StarRating" hint-size="280px,20px" rating="{{ 5 }}" score="4.96" count="4,508" verified="{{ false }}"></x-import>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px;overflow:hidden;text-align:left">
+      <div style="display:flex;gap:20px;width:max-content;animation:eth-marquee 64s linear infinite">
+        <sc-for list="{{ rowA }}" as="r" hint-placeholder-count="6">
+          <div style="flex:0 0 340px;display:flex;flex-direction:column;gap:10px;padding:20px;background:#fff;border:1px solid var(--eth-black)">
+            <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.StarRating" hint-size="120px,16px" rating="{{ 5 }}"></x-import>
+            <p style="margin:0;font:400 15px/1.5 var(--font-ui);color:var(--eth-ink)">{{ r.body }}</p>
+            <p style="margin:0;font:500 14px/1.4 var(--font-ui);color:var(--eth-black)">{{ r.name }} <span style="font-weight:400;color:var(--eth-confirm-green)">· Verified buyer</span></p>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:20px;width:max-content;animation:eth-marquee 72s linear infinite reverse">
+        <sc-for list="{{ rowB }}" as="r" hint-placeholder-count="6">
+          <div style="flex:0 0 340px;display:flex;flex-direction:column;gap:10px;padding:20px;background:#fff;border:1px solid var(--eth-black)">
+            <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.StarRating" hint-size="120px,16px" rating="{{ 5 }}"></x-import>
+            <p style="margin:0;font:400 15px/1.5 var(--font-ui);color:var(--eth-ink)">{{ r.body }}</p>
+            <p style="margin:0;font:500 14px/1.4 var(--font-ui);color:var(--eth-black)">{{ r.name }} <span style="font-weight:400;color:var(--eth-confirm-green)">· Verified buyer</span></p>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:20px;width:max-content;animation:eth-marquee 58s linear infinite">
+        <sc-for list="{{ rowC }}" as="r" hint-placeholder-count="6">
+          <div style="flex:0 0 340px;display:flex;flex-direction:column;gap:10px;padding:20px;background:#fff;border:1px solid var(--eth-black)">
+            <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.StarRating" hint-size="120px,16px" rating="{{ 5 }}"></x-import>
+            <p style="margin:0;font:400 15px/1.5 var(--font-ui);color:var(--eth-ink)">{{ r.body }}</p>
+            <p style="margin:0;font:500 14px/1.4 var(--font-ui);color:var(--eth-black)">{{ r.name }} <span style="font-weight:400;color:var(--eth-confirm-green)">· Verified buyer</span></p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="faq" style="padding:clamp(36px,5vw,64px) clamp(20px,3vw,44px);background:#fff" data-screen-label="FAQ">
+  <div style="max-width:900px;margin:0 auto">
+    <p style="margin:0 0 10px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">FAQ</p>
+    <h2 style="margin:0 0 30px;font-family:var(--font-display);font-weight:700;font-size:clamp(26px,3.2vw,40px);line-height:1.14;color:var(--eth-black)">Before you buy</h2>
+    <div style="display:flex;flex-direction:column;gap:clamp(28px,3.4vw,44px)">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <p style="margin:0;padding-bottom:8px;border-bottom:1px solid var(--eth-black);font:500 11px/1.2 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">The formula</p>
+        <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.Accordion" hint-size="100%,240px">
+        <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.AccordionItem" hint-size="100%,76px" title="What makes ETHLETE different from others?">ETHLETE was formulated with Ivy-League scientists to fuel performance. Each stick combines clinical doses of <strong style="font-weight:500;color:var(--eth-black)">electrolytes, creatine, and essential vitamins (B6, B12, C)</strong> with zero artificial colors or fillers to deliver hydration that supports <strong style="font-weight:500;color:var(--eth-black)">muscle recovery, mental focus, and cellular hydration</strong>.</x-import>
+        <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.AccordionItem" hint-size="100%,76px" title="What electrolytes are in ETHLETE?">
+        <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px">
+          <li>Sodium (Himalayan salt) for rapid fluid absorption</li>
+          <li>Potassium citrate to prevent cramps and support heart function</li>
+          <li>Magnesium glycinate for muscle relaxation and energy production</li>
+        </ul>
+      </x-import>
+        <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.AccordionItem" hint-size="100%,76px" title="Why does ETHLETE include creatine?">Creatine isn’t just for bodybuilders. It’s one of the most <strong style="font-weight:500;color:var(--eth-black)">researched performance ingredients in the world</strong>. It helps your muscles <strong style="font-weight:500;color:var(--eth-black)">store more water, produce ATP energy faster</strong>, and recover more efficiently. We use a clinically supported dose for daily, sustained benefits.</x-import>
+        <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.AccordionItem" hint-size="100%,76px" title="Do I need to load creatine?">No. The daily dose from your first stick is the maintenance dose used in the research — a loading phase only gets you to the same place a few days sooner.</x-import>
+        <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.AccordionItem" hint-size="100%,76px" title="What is ETHLETE sweetened with?">We use monk fruit and coconut powder water for a smooth and flavorful taste. We use only naturally derived flavors from fruits and botanicals (like lemon or lime extracts). No artificial flavors, dyes, or preservatives.</x-import>
+        </x-import>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <p style="margin:0;padding-bottom:8px;border-bottom:1px solid var(--eth-black);font:500 11px/1.2 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">How to drink it</p>
+        <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.Accordion" hint-size="100%,240px">
+        <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.AccordionItem" hint-size="100%,76px" title="How do I use it?">Mix one stick with 16–20 oz of cold water and shake or stir until dissolved.</x-import>
+        <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.AccordionItem" hint-size="100%,76px" title="When should I drink ETHLETE?">
+        <p style="margin:0 0 10px">Use ETHLETE any time your body needs optimized hydration. We recommend 1–2x daily:</p>
+        <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px">
+          <li>Before training to prime your cells.</li>
+          <li>During workouts to sustain energy and reduce fatigue.</li>
+          <li>After exercise or travel to recover faster.</li>
+          <li>Or daily, as your upgraded alternative to plain water.</li>
+        </ul>
+      </x-import>
+        <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.AccordionItem" hint-size="100%,76px" title="Is ETHLETE vegan, gluten-free, or keto-friendly?">Yes, our products are Vegan, Gluten-free, Keto-friendly, Non–GMO.</x-import>
+        </x-import>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <p style="margin:0;padding-bottom:8px;border-bottom:1px solid var(--eth-black);font:500 11px/1.2 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:var(--eth-grey-39)">Orders and subscription</p>
+        <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.Accordion" hint-size="100%,240px">
+        <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.AccordionItem" hint-size="100%,76px" title="Do you ship internationally?">Yes, we do ship to most countries. Orders placed before 2pm CT ship the same business day from Dallas, and shipping is free on US orders over $29.</x-import>
+        <x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.AccordionItem" hint-size="100%,76px" title="How do I modify or cancel my subscription?">A subscription is delivered every 30, 45, 60 or 90 days and renews automatically at your subscription price until you cancel. Modify, skip or cancel any time by logging into your account at ethlete.com/account, or email hello@ethlete.com.</x-import>
+        </x-import>
+      </div>
+    </div>
+    <p style="margin:26px 0 0;font:400 12px/1.5 var(--font-ui);color:var(--eth-grey-39)">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Always consult your healthcare provider before starting any new supplement, especially if you are pregnant, nursing, have a medical condition, or are taking medications. †</p>
+  </div>
+</section>
+
+<img ref="{{ footerLogoImg }}" src="assets/logo-ethlete-white.png" alt="" style="display:none">
+<x-import component-from-global-scope="ETHLETEDesignSystem_bf5ae7.Footer" hint-size="100%,620px" logo="{{ footerLogo }}" dc-props="{{ footer }}"></x-import>
+
+<sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeCart }}" style="position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.36);animation:eth-scrim-in .2s cubic-bezier(.25,.1,.25,1) both"></div>
+  <aside style="position:fixed;top:0;right:0;bottom:0;z-index:61;width:min(420px,100%);display:flex;flex-direction:column;background:#fff;box-shadow:0 0 20px rgba(0,0,0,.2);animation:eth-drawer-in .24s cubic-bezier(.25,.1,.25,1) both">
+    <div style="display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 20px;border-bottom:1px solid var(--eth-black)">
+      <span style="font:500 14px/1 var(--font-ui);letter-spacing:1.4px;text-transform:uppercase;color:var(--eth-black)">Your cart (1)</span>
+      <button onClick="{{ closeCart }}" style="border:0;background:none;font:400 24px/1 var(--font-ui);color:var(--eth-black);cursor:pointer">×</button>
+    </div>
+    <div style="padding:16px 20px;background:var(--eth-mist);border-bottom:1px solid var(--eth-grey-82)">
+      <p style="margin:0 0 8px;font:500 14px/1.4 var(--font-ui);color:var(--eth-black)">$2.00 away from a free frother</p>
+      <div style="height:6px;background:var(--eth-grey-82)"><div style="width:96%;height:6px;background:var(--eth-confirm-green)"></div></div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;overflow:auto">
+      <div style="display:flex;gap:14px;padding:18px 20px;border-bottom:1px solid var(--eth-grey-82)">
+        <img src="assets/_xs-product-3.jpg" alt="" style="width:74px;height:74px;object-fit:cover;background:var(--eth-mist)">
+        <div style="flex:1;display:flex;flex-direction:column;gap:4px">
+          <p style="margin:0;font:500 16px/1.35 var(--font-ui);color:var(--eth-black)">Electrolytes + Creatine — Peach Mango</p>
+          <p style="margin:0;font:400 14px/1.4 var(--font-ui);color:var(--eth-grey-39)">1 bag · 30 sticks · Subscription, every 45 days</p>
+          <div style="display:flex;align-items:baseline;gap:8px">
+            <span style="font:500 16px/1 var(--font-ui);color:var(--eth-confirm-green)">$35.00</span>
+            <span style="font:400 14px/1 var(--font-ui);color:var(--eth-grey-39);text-decoration:line-through">$48.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:18px 20px;border-top:1px solid var(--eth-black)">
+      <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font:400 16px/1.4 var(--font-ui)">Subtotal</span><span style="font:500 16px/1.4 var(--font-ui);color:var(--eth-black)">$35.00</span></div>
+      <div style="display:flex;justify-content:space-between;margin-bottom:14px"><span style="font:400 14px/1.4 var(--font-ui);color:var(--eth-confirm-green)">You save</span><span style="font:500 14px/1.4 var(--font-ui);color:var(--eth-confirm-green)">$13.00</span></div>
+      <a href="05%20Cart%20drawer.dc.html" style="display:flex;align-items:center;justify-content:center;min-height:52px;background:var(--eth-black);font:500 14px/1 var(--font-ui);letter-spacing:1.4px;text-transform:uppercase;color:#fff">Checkout</a>
+      <p style="margin:12px 0 0;font:400 12px/1.5 var(--font-ui);color:var(--eth-ink)">Renews every 45 days at $35.00 until cancelled. Cancel or change cadence any time in your account.</p>
+    </div>
+  </aside>
+</sc-if>
+
+<sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:70;display:flex;flex-direction:column;background:#fff;overflow:auto;animation:eth-overlay-in .24s cubic-bezier(.25,.1,.25,1) both">
+
+    <div style="display:flex;align-items:center;justify-content:space-between;min-height:60px;padding:8px 20px 0">
+      <button onClick="{{ closeNav }}" aria-label="Close menu" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:-11px;border:0;background:none;cursor:pointer">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--eth-black)" stroke-width="1.4" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg>
+      </button>
+      <img src="assets/logo-ethlete.png" alt="ETHLETE" style="height:15px;width:auto">
+    </div>
+
+    <div style="margin-top:10px;overflow:hidden;background:var(--eth-black)">
+      <div style="display:flex;width:max-content;padding:11px 0;animation:eth-marquee 30s linear infinite"><span style="padding:0 22px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:#fff;white-space:nowrap">💧 Hydrate Faster</span><span style="padding:0 22px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:#fff;white-space:nowrap">💪 Train Stronger</span><span style="padding:0 22px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:#fff;white-space:nowrap">🧠 Think Sharper</span><span style="padding:0 22px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:#fff;white-space:nowrap">🔋 Fight Fatigue</span><span style="padding:0 22px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:#fff;white-space:nowrap">⚡ Recover Better</span><span style="padding:0 22px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:#fff;white-space:nowrap">💧 Hydrate Faster</span><span style="padding:0 22px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:#fff;white-space:nowrap">💪 Train Stronger</span><span style="padding:0 22px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:#fff;white-space:nowrap">🧠 Think Sharper</span><span style="padding:0 22px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:#fff;white-space:nowrap">🔋 Fight Fatigue</span><span style="padding:0 22px;font:500 12px/1 var(--font-ui);letter-spacing:1.2px;text-transform:uppercase;color:#fff;white-space:nowrap">⚡ Recover Better</span></div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:9px;padding:16px 20px 2px">
+      <span style="display:flex;gap:2px;color:#F0B429"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.6.8-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.8z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.6.8-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.8z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.6.8-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.8z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.6.8-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.8z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.6.8-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.8z"></path></svg></span>
+      <span style="font:500 14px/1.4 var(--font-ui);color:var(--eth-black)">4.96</span>
+      <span style="font:400 14px/1.4 var(--font-ui);color:var(--eth-grey-39)">(4,508 verified reviews)</span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;padding:6px 20px 0">
+      <a href="03%20Product%20page.dc.html" onClick="{{ closeNav }}" style="display:flex;align-items:center;gap:15px;padding:16px 0;border-bottom:1px solid var(--eth-grey-82);" style-hover="opacity:.6">
+        <span style="flex:0 0 auto;width:72px;height:72px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:8px;border:1px solid var(--eth-black);background:#fff">
+          <img src="assets/_xs-pm-pouch2.jpg" alt="Electrolytes + Creatine pouch, Peach Mango" style="width:100%;height:100%;object-fit:contain;object-position:center">
+        </span>
+        <span style="flex:1 1 auto;display:flex;flex-direction:column;align-items:flex-start;gap:5px">
+          <span style="padding:3px 7px;background:var(--eth-black);color:#fff;font:700 10px/1.2 var(--font-ui);letter-spacing:1px;text-transform:uppercase">Best seller</span>
+          <span style="font:700 17px/1.3 var(--font-ui);color:var(--eth-black)">Electrolytes + Creatine</span>
+          <span style="font:400 14px/1.4 var(--font-ui);color:var(--eth-grey-39)">Three flavors, from $48</span>
+        </span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--eth-black)" stroke-width="1.2" aria-hidden="true" style="flex:0 0 auto"><path d="M9 5l7 7-7 7"></path></svg>
+      </a>
+      <a href="04%20Starter%20Kit.dc.html" onClick="{{ closeNav }}" style="display:flex;align-items:center;gap:15px;padding:16px 0;border-bottom:1px solid var(--eth-grey-82);" style-hover="opacity:.6">
+        <span style="flex:0 0 auto;width:72px;height:72px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:8px;border:1px solid var(--eth-black);background:#fff">
+          <img src="assets/_xs-product-starter-kit-clean.jpg" alt="ETHLETE Starter Kit — three pouches, bottle and frother" style="width:100%;height:100%;object-fit:contain;object-position:center">
+        </span>
+        <span style="flex:1 1 auto;display:flex;flex-direction:column;align-items:flex-start;gap:5px">
+          <span style="font:700 17px/1.3 var(--font-ui);color:var(--eth-black)">Build Your Bundle</span>
+          <span style="font:400 14px/1.4 var(--font-ui);color:var(--eth-grey-39)">Buy more, save more</span>
+        </span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--eth-black)" stroke-width="1.2" aria-hidden="true" style="flex:0 0 auto"><path d="M9 5l7 7-7 7"></path></svg>
+      </a>
+      <a href="03%20Product%20page.dc.html" onClick="{{ closeNav }}" style="display:flex;align-items:center;gap:15px;padding:16px 0;border-bottom:1px solid var(--eth-grey-82);" style-hover="opacity:.6">
+        <span style="flex:0 0 auto;width:72px;height:72px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:8px;border:1px solid var(--eth-black);background:#fff">
+          <img src="assets/_xs-nad-pouch.jpg" alt="ETHLETE NAD+ with NMN and Resveratrol" style="width:100%;height:100%;object-fit:contain;object-position:center">
+        </span>
+        <span style="flex:1 1 auto;display:flex;flex-direction:column;align-items:flex-start;gap:5px">
+          <span style="padding:3px 7px;background:var(--eth-black);color:#fff;font:700 10px/1.2 var(--font-ui);letter-spacing:1px;text-transform:uppercase">New</span>
+          <span style="font:700 17px/1.3 var(--font-ui);color:var(--eth-black)">NAD+</span>
+          <span style="font:400 14px/1.4 var(--font-ui);color:var(--eth-grey-39)">NMN + Resveratrol</span>
+        </span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--eth-black)" stroke-width="1.2" aria-hidden="true" style="flex:0 0 auto"><path d="M9 5l7 7-7 7"></path></svg>
+      </a>
+      <a href="#" onClick="{{ closeNav }}" style="display:flex;align-items:center;gap:15px;padding:16px 0;" style-hover="opacity:.6">
+        <span style="flex:0 0 auto;width:72px;height:72px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:8px;border:1px solid var(--eth-black);background:#fff">
+          <img src="assets/_xs-frother-bottle.jpg" alt="ETHLETE frother and Fuel 750 bottle" style="width:100%;height:100%;object-fit:contain;object-position:center">
+        </span>
+        <span style="flex:1 1 auto;display:flex;flex-direction:column;align-items:flex-start;gap:5px">
+          <span style="font:700 17px/1.3 var(--font-ui);color:var(--eth-black)">Accessories</span>
+          <span style="font:400 14px/1.4 var(--font-ui);color:var(--eth-grey-39)">Fuel 750 bottle and frother</span>
+        </span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--eth-black)" stroke-width="1.2" aria-hidden="true" style="flex:0 0 auto"><path d="M9 5l7 7-7 7"></path></svg>
+      </a>
+    </div>
+
+    <div style="padding:18px 20px 0">
+      <a href="04%20Starter%20Kit.dc.html" onClick="{{ closeNav }}" style="display:flex;align-items:center;justify-content:center;min-height:52px;background:var(--eth-volt);border:1px solid var(--eth-black);border-radius:3px;font:500 14px/1 var(--font-ui);letter-spacing:1.4px;text-transform:uppercase;color:var(--eth-black)" style-hover="background:#CFE700">Try the Starter Kit — $109</a>
+      <p style="margin:10px 0 0;font:400 13px/1.4 var(--font-ui);text-align:center;color:var(--eth-grey-49)">3 bags, 1 bottle and 1 frother. Free shipping.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;padding:26px 20px 30px">
+      <a href="#inside" onClick="{{ closeNav }}" style="display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px solid var(--eth-grey-82)" style-hover="opacity:.6">
+        <span style="font:500 11px/1 var(--font-ui);letter-spacing:1px;color:var(--eth-grey-64)">01</span>
+        <span style="font-family:var(--font-display);font-weight:700;font-size:26px;line-height:1.1;letter-spacing:.2px;text-transform:uppercase;color:var(--eth-black)">Ingredients</span>
+      </a>
+      <a href="#" onClick="{{ closeNav }}" style="display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px solid var(--eth-grey-82)" style-hover="opacity:.6">
+        <span style="font:500 11px/1 var(--font-ui);letter-spacing:1px;color:var(--eth-grey-64)">02</span>
+        <span style="font-family:var(--font-display);font-weight:700;font-size:26px;line-height:1.1;letter-spacing:.2px;text-transform:uppercase;color:var(--eth-black)">Blog</span>
+      </a>
+      <a href="#faq" onClick="{{ closeNav }}" style="display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px solid var(--eth-grey-82)" style-hover="opacity:.6">
+        <span style="font:500 11px/1 var(--font-ui);letter-spacing:1px;color:var(--eth-grey-64)">03</span>
+        <span style="font-family:var(--font-display);font-weight:700;font-size:26px;line-height:1.1;letter-spacing:.2px;text-transform:uppercase;color:var(--eth-black)">FAQs</span>
+      </a>
+      <a href="#" onClick="{{ closeNav }}" style="display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px solid var(--eth-grey-82)" style-hover="opacity:.6">
+        <span style="font:500 11px/1 var(--font-ui);letter-spacing:1px;color:var(--eth-grey-64)">04</span>
+        <span style="font-family:var(--font-display);font-weight:700;font-size:26px;line-height:1.1;letter-spacing:.2px;text-transform:uppercase;color:var(--eth-black)">Wholesale</span>
+      </a>
+      <a href="#" onClick="{{ closeNav }}" style="display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px solid var(--eth-grey-82)" style-hover="opacity:.6">
+        <span style="font:500 11px/1 var(--font-ui);letter-spacing:1px;color:var(--eth-grey-64)">05</span>
+        <span style="font-family:var(--font-display);font-weight:700;font-size:26px;line-height:1.1;letter-spacing:.2px;text-transform:uppercase;color:var(--eth-black)">Become a Partner</span>
+      </a>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:19px;padding:26px 20px 34px;background:var(--eth-mist);border-top:1px solid var(--eth-grey-82)">
+      <a href="#" onClick="{{ closeNav }}" style="font:400 14px/1 var(--font-ui);color:var(--eth-grey-39)" style-hover="color:var(--eth-black)">Sign in</a>
+      <a href="#" onClick="{{ closeNav }}" style="font:400 14px/1 var(--font-ui);color:var(--eth-grey-39)" style-hover="color:var(--eth-black)">Contact</a>
+      <a href="#" onClick="{{ closeNav }}" style="font:400 14px/1 var(--font-ui);color:var(--eth-grey-39)" style-hover="color:var(--eth-black)">Manage Subscription</a>
+      <a href="#" onClick="{{ closeNav }}" style="font:400 14px/1 var(--font-ui);color:var(--eth-grey-39)" style-hover="color:var(--eth-black)">Refer a Friend</a>
+      <a href="#" onClick="{{ closeNav }}" style="font:400 14px/1 var(--font-ui);color:var(--eth-grey-39)" style-hover="color:var(--eth-black)">Privacy Policy</a>
+      <a href="#" onClick="{{ closeNav }}" style="font:400 14px/1 var(--font-ui);color:var(--eth-grey-39)" style-hover="color:var(--eth-black)">Terms &amp; Conditions</a>
+      <div style="display:flex;gap:10px;padding-top:8px">
+        <a href="#" onClick="{{ closeNav }}" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;min-width:44px;height:44px;padding:0 14px;border:1px solid var(--eth-black);font:500 12px/1 var(--font-ui);letter-spacing:1px;text-transform:uppercase;color:var(--eth-black)" style-hover="background:var(--eth-black);color:#fff">Instagram</a>
+        <a href="#" onClick="{{ closeNav }}" aria-label="TikTok" style="display:flex;align-items:center;justify-content:center;min-width:44px;height:44px;padding:0 14px;border:1px solid var(--eth-black);font:500 12px/1 var(--font-ui);letter-spacing:1px;text-transform:uppercase;color:var(--eth-black)" style-hover="background:var(--eth-black);color:#fff">TikTok</a>
+      </div>
+    </div>
+
+  </div>
+</sc-if>
+
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1000},&quot;shopButtonStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Black&quot;,&quot;Volt&quot;],&quot;default&quot;:&quot;Volt&quot;,&quot;tsType&quot;:&quot;'Black' | 'Volt'&quot;,&quot;section&quot;:&quot;Header&quot;}}">
+class Component extends DCLogic {
+  state = { footerLogo: null, cartOpen: false, navOpen: false, shopOpen: false, reviewsOverflow: true, offer: 0 };
+  reviewTrack = React.createRef();
+  paraSection = React.createRef();
+  scrubCanvas = React.createRef();
+  scrubFrames = React.createRef();
+  footerLogoImg = React.createRef();
+
+  allReviews = [
+    { name: 'Monica R.', body: 'I was buying creatine and electrolytes separately and mixing them in the same bottle like a lunatic. This is the same thing in one stick and it tastes better.' },
+    { name: 'Marshall H.', body: 'Third party tested was the thing that sold me. I read the panel, the doses are real, and there is no sugar hiding in it.' },
+    { name: 'Tori G.', body: 'Peach Mango is the one. I drink it after school pickup, not just after training, which I did not expect.' },
+    { name: 'Devon A.', body: 'Two-a-days in August in Dallas. One stick in the morning bottle and I am not cramping in the second session anymore.' },
+    { name: 'Priya S.', body: 'I stopped the separate creatine tub. Same 5g, no grit at the bottom of the glass, and one fewer thing on the counter.' },
+    { name: 'Colin B.', body: 'Raspberry Lemon is genuinely not sweet, which is why I finish the bottle. Everything else I tried tasted like candy.' },
+    { name: 'Hannah W.', body: 'Ordered the variety pack first because I could not pick. Lemon Lime won, and the reorder took ten seconds.' },
+    { name: 'Jamal T.', body: 'The B12 is the part I noticed. Mid-afternoon used to be a write-off and now it is not. No jitters because there is no caffeine in it.' },
+    { name: 'Alexis D.', body: 'Six weeks in and my afternoon workouts do not fall apart anymore. One stick in the morning bottle, that is the whole routine.' },
+    { name: 'Ben K.', body: 'I travel every week and the sticks go in the laptop bag. No tub in the suitcase, no powder explosion in a hotel room.' },
+    { name: 'Sofia M.', body: 'My husband and I both drink it. He is training for HYROX, I am chasing a toddler. Same stick works for both of us.' },
+    { name: 'Ray P.', body: 'Dissolves clear in cold water in about ten seconds. That sounds small until you have choked down clumpy creatine for a year.' },
+    { name: 'Nina F.', body: 'Zero sugar and it still tastes like something. I was expecting the usual chemical aftertaste and it never showed up.' },
+    { name: 'Terrence O.', body: 'Bought the Starter Kit as a gift and ended up subscribing myself. The frother is a nicer touch than I expected.' },
+    { name: 'Kayla J.', body: 'I have kidney-friendly restrictions so I read every panel. This one is exactly what it says on the label.' },
+    { name: 'Miguel A.', body: 'Cheaper than the two products it replaced and I stopped forgetting the creatine entirely. That was the real win.' },
+    { name: 'Dana L.', body: 'Subscription arrives before I run out and changing the cadence took one tap. No email, no phone call.' },
+    { name: 'Owen S.', body: 'Cycling long rides in Texas heat. Two sticks over four hours and no cramping on the climbs at the end.' },
+  ];
+
+  offers = [
+    { text: 'Free shipping on orders over $29 — no code needed' },
+    { text: 'Subscribe and save 27% — $35.00 a bag' },
+  ];
+
+  componentDidMount() {
+    this.muteAll();
+    this._muteTimer = setTimeout(() => this.muteAll(), 600);
+    this._muteInterval = setInterval(() => this.muteAll(), 1500);
+    const fl = this.footerLogoImg.current;
+    if (fl) {
+      const setLogo = () => this.setState({ footerLogo: fl.currentSrc || fl.src });
+      if (fl.complete && fl.naturalWidth) setLogo(); else fl.addEventListener('load', setLogo, { once: true });
+    }
+    this.trimFooter();
+    this.initParallax();
+    this.initLazyVideos();
+    this._onResize = () => { this.syncArrows(); if (this._paraTick) this._paraTick(); };
+    window.addEventListener('resize', this._onResize);
+    this.syncArrows();
+    setTimeout(() => this.syncArrows(), 300);
+    this._offerTimer = setInterval(() => {
+      this.setState((s) => ({ offer: (s.offer + 1) % this.offers.length }));
+    }, 5200);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this._muteTimer);
+    clearInterval(this._muteInterval);
+    clearInterval(this._offerTimer);
+    window.removeEventListener('resize', this._onResize);
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    if (this._paraRaf) cancelAnimationFrame(this._paraRaf);
+    if (this._lazyObserver) this._lazyObserver.disconnect();
+  }
+
+  initLazyVideos() {
+    const vids = Array.from(document.querySelectorAll('video[data-lazy-video]'));
+    if (!vids.length) return;
+    this._lazyObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const v = entry.target;
+        if (v.hasAttribute('data-scrub-video')) {
+          if (v.dataset.src && !v.src) { v.src = v.dataset.src; v.load(); }
+          return;
+        }
+        if (entry.isIntersecting) {
+          if (v.dataset.src && !v.src) { v.src = v.dataset.src; v.load(); }
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { rootMargin: '600px 0px' });
+    vids.forEach((v) => this._lazyObserver.observe(v));
+  }
+
+  syncArrows() {
+    const el = this.reviewTrack.current;
+    if (!el) return;
+    const overflows = el.scrollWidth - el.clientWidth > 4;
+    if (overflows !== this.state.reviewsOverflow) this.setState({ reviewsOverflow: overflows });
+  }
+
+  muteAll() {
+    document.querySelectorAll('video').forEach((v) => {
+      if (v.hasAttribute('data-unmuted')) return;
+      v.muted = true;
+      v.defaultMuted = true;
+      v.volume = 0;
+      v.setAttribute('muted', '');
+    });
+  }
+
+  scrollReviews(dir) {
+    const el = this.reviewTrack.current;
+    if (!el) return;
+    const card = el.firstElementChild;
+    const step = card ? card.getBoundingClientRect().width + 20 : el.clientWidth;
+    el.scrollBy({ left: dir * step, behavior: 'smooth' });
+  }
+
+  // The design system's Footer hardcodes the currency pill and the Shopify
+  // credit; ETHLETE doesn't want either, so strip them once it has mounted.
+  trimFooter() {
+    let tries = 0;
+    const strip = () => {
+      const foot = document.querySelector('footer');
+      if (foot) {
+        foot.querySelectorAll('span').forEach((el) => {
+          const t = (el.textContent || '').trim();
+          if (t === 'Powered by Shopify' || /^USD/.test(t)) el.remove();
+        });
+      }
+      if (++tries < 20 && !foot) this._footTimer = setTimeout(strip, 150);
+    };
+    strip();
+    this._footTimer = setTimeout(strip, 400);
+  }
+
+  initParallax() {
+    // Scroll-scrubbed background. The clip is pre-baked into 30 stills at native
+    // 1280x720, so scrolling only blits a decoded bitmap — no video decoder, no
+    // seek latency, no duration quirks. Paths are literal so they inline on export.
+    const FRAMES = 30;
+    const FW = 1280, FH = 720;
+    this._strip = null;
+    this._stripIndex = -1;
+    this._scrubTarget = 0;
+    this._scrubShown = 0;
+
+    const progress = () => {
+      const sec = this.paraSection.current;
+      if (!sec) return null;
+      const rect = sec.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const scrollable = rect.height - vh;
+      if (scrollable > 0) {
+        // Tall sticky section (desktop): scrub across the pinned travel.
+        return Math.max(0, Math.min(1, (-rect.top / scrollable) / 0.6));
+      }
+      // Short section (mobile square): scrub as the panel crosses the viewport.
+      const travel = vh + rect.height;
+      if (travel <= 0) return null;
+      return Math.max(0, Math.min(1, (vh - rect.top) / travel));
+    };
+
+    const frame = () => {
+      this._paraRaf = requestAnimationFrame(frame);
+      const p = progress();
+      if (p === null || !this._strip) return;
+      // Ease the shown position so a coarse wheel step reads as motion.
+      this._scrubTarget = p;
+      const diff = this._scrubTarget - this._scrubShown;
+      this._scrubShown += Math.abs(diff) < 0.0008 ? diff : diff * 0.16;
+      const idx = Math.max(0, Math.min(FRAMES - 1, Math.round(this._scrubShown * (FRAMES - 1))));
+      if (idx !== this._stripIndex) {
+        this._stripIndex = idx;
+        const img = this._strip[idx];
+        if (this._stripCtx && img) this._stripCtx.drawImage(img, 0, 0, FW, FH);
+      }
+    };
+
+    const canvas = this.scrubCanvas.current;
+    if (canvas) {
+      canvas.width = FW;
+      canvas.height = FH;
+      this._stripCtx = canvas.getContext('2d');
+      // The frames live as real <img> tags in the template so the exporter
+      // inlines them; we just wait for them to decode.
+      const host = this.scrubFrames.current;
+      const nodes = host ? Array.prototype.slice.call(host.querySelectorAll('img')) : [];
+      const load = (im) => new Promise((res) => {
+        if (im.complete && im.naturalWidth) return res(im);
+        im.onload = () => res(im);
+        im.onerror = () => res(null);
+      });
+      Promise.all(nodes.map(load)).then((imgs) => {
+        if (!imgs.length) return;
+        if (imgs.some((x) => !x)) return; // poster background stays up
+        this._strip = imgs;
+        this._stripIndex = -1;
+        const p = progress();
+        this._scrubShown = this._scrubTarget = p === null ? 0 : p;
+        canvas.style.opacity = '1';
+      });
+    }
+    this._paraTick = () => {};
+    this._paraRaf = requestAnimationFrame(frame);
+  }
+  marqueeRow(i) {
+    const per = Math.ceil(this.allReviews.length / 3);
+    const slice = this.allReviews.slice(i * per, i * per + per);
+    return slice.concat(slice);
+  }
+
+  renderVals() {
+    const offer = this.offers[this.state.offer];
+    const volt = (this.props.shopButtonStyle ?? 'Volt') === 'Volt';
+    return {
+      offerText: offer.text,
+      offerKey: 'offer-' + this.state.offer,
+      cartOpen: this.state.cartOpen,
+      shopOpen: this.state.shopOpen,
+      shopBg: volt ? 'var(--eth-volt)' : 'var(--eth-black)',
+      shopFg: volt ? 'var(--eth-black)' : '#fff',
+      reviewTrack: this.reviewTrack,
+      paraSection: this.paraSection,
+      scrubCanvas: this.scrubCanvas,
+      scrubFrames: this.scrubFrames,
+      footerLogoImg: this.footerLogoImg,
+      footerLogo: this.state.footerLogo || 'assets/logo-ethlete-white.png',
+      reviewsOverflow: this.state.reviewsOverflow,
+      reviewPrev: () => this.scrollReviews(-1),
+      reviewNext: () => this.scrollReviews(1),
+      toggleSound: (e) => {
+        const btn = e.currentTarget;
+        const v = btn.parentElement && btn.parentElement.querySelector('video');
+        if (!v) return;
+        document.querySelectorAll('[data-ugc-video]').forEach((other) => {
+          if (other !== v) { other.muted = true; other.removeAttribute('data-unmuted'); }
+        });
+        document.querySelectorAll('[data-sound]').forEach((b) => { if (b !== btn) b.textContent = 'Tap for sound'; });
+        const nowMuted = !v.muted;
+        v.muted = nowMuted;
+        if (!nowMuted) { v.volume = 1; v.setAttribute('data-unmuted', '1'); v.play(); }
+        else v.removeAttribute('data-unmuted');
+        btn.textContent = nowMuted ? 'Tap for sound' : 'Mute';
+      },
+      shopGlyph: this.state.shopOpen ? '\u00d7' : '+',
+      toggleShop: () => this.setState((s) => ({ shopOpen: !s.shopOpen })),
+      shopAction: () => {
+        if (window.matchMedia('(max-width:1160px)').matches) this.setState({ navOpen: true });
+        else this.setState((s) => ({ shopOpen: !s.shopOpen }));
+      },
+      openCart: () => this.setState({ cartOpen: true }),
+      closeCart: () => this.setState({ cartOpen: false }),
+      navOpen: this.state.navOpen,
+      openNav: () => this.setState({ navOpen: true }),
+      closeNav: () => this.setState({ navOpen: false }),
+      rowA: this.marqueeRow(0),
+      rowB: this.marqueeRow(1),
+      rowC: this.marqueeRow(2),
+      footer: {
+        columns: [
+          { title: 'Shop', links: [{ label: 'Electrolytes + Creatine' }, { label: 'Starter Kit' }, { label: '12-Stick Variety Pack' }, { label: 'Frother' }] },
+          { title: 'Science', links: [{ label: 'Why creatine' }, { label: 'Ingredient panel' }, { label: 'Third party testing' }] },
+          { title: 'Support', links: [{ label: 'About ETHLETE' }, { label: 'Contact' }, { label: 'Manage Subscription' }, { label: 'Privacy Policy' }, { label: 'Terms & Conditions' }] },
+        ],
+      },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

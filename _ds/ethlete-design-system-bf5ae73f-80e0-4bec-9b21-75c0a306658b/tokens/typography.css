@@ -1,0 +1,96 @@
+/* ETHLETE type system — Brand Guidelines v1.1, section 03.
+   Display = Eurostile Bold (licence pending; Saira stands in — see fonts.css).
+   Everything else = Poppins: body, subheads, nav, buttons, product detail, legal. */
+:root {
+  --font-display: Eurostile, "Eurostile Bold", Saira, Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* @kind font */
+  --font-ui: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* @kind font */
+
+  --fw-light: 300; /* @kind other */
+  --fw-regular: 400; /* @kind other */
+  --fw-medium: 500; /* @kind other */
+  --fw-bold: 700; /* @kind other */
+
+  /* ---- Role scale ----
+     Desktop / mobile pairs from the guidelines, expressed as clamps so a single
+     token covers both ends. Mobile-first: every value is authored at 390px and
+     adapted up. Body never drops below 16px — 83% of traffic is mobile. */
+  --fs-hero: clamp(40px, 6.4vw, 72px); /* @kind font */          /* 60–72 desktop · 40–50 mobile · display bold · max 2 lines on mobile */
+  --fs-section: clamp(28px, 4vw, 46px); /* @kind font */         /* 40–46 · 28–30 · display bold */
+  --fs-subhead: clamp(22px, 2.8vw, 34px); /* @kind font */       /* 28–34 · 22–24 · Poppins Medium */
+  --fs-card-title: clamp(18px, 1.6vw, 22px); /* @kind font */    /* 18–22 · 18 · Poppins Medium */
+  --fs-body: 16px; /* @kind font */                              /* 16 both · Poppins Regular · never lower on mobile */
+  --fs-meta: 14px; /* @kind font */                              /* small / meta */
+  --fs-legal: 12px; /* @kind font */                             /* legal — must stay legible, see ARL card */
+
+  --lh-display: 1.06; /* @kind other */
+  --lh-heading: 1.2; /* @kind other */
+  --lh-body: 1.55; /* @kind other */                             /* guidelines: 1.5–1.6 */
+  --measure-body: 70ch; /* @kind other */                        /* ~70 characters max line length */
+
+  --ls-tight: -0.3px; /* @kind other */
+  --ls-0: 0; /* @kind other */
+  --ls-wide: 0.52px; /* @kind other */
+  --ls-caps: 1px; /* @kind other */
+  --ls-caps-lg: 1.2px; /* @kind other */
+  --ls-button: 1.4px; /* @kind other */
+
+  /* ---- Legacy sizes ----
+     Scraped from the html-to-design capture of the current theme. Kept only so
+     the shipped components keep resolving; the role scale above supersedes them.
+     Do not reach for these in new work. */
+  --fs-9-4: 9.4px; /* @kind font */
+  --fs-10-5: 10.5px; /* @kind font */
+  --fs-12: 12px; /* @kind font */
+  --fs-12-3: 12.3px; /* @kind font */
+  --fs-12-6: 12.6px; /* @kind font */
+  --fs-14: 14px; /* @kind font */
+  --fs-15-8: 15.8px; /* @kind font */
+  --fs-16: 16px; /* @kind font */
+  --fs-17-5: 17.5px; /* @kind font */
+  --fs-18: 18px; /* @kind font */
+  --fs-20: 20px; /* @kind font */
+  --fs-22: 22px; /* @kind font */
+  --fs-30: 30px; /* @kind font */
+  --fs-32: 32px; /* @kind font */
+  --fs-34: 34px; /* @kind font */
+  --fs-36: 36px; /* @kind font */
+  --fs-40: 40px; /* @kind font */
+  --fs-46: 46px; /* @kind font */
+  --fs-60: 60px; /* @kind font */
+  --font-editorial: var(--font-ui); /* @kind font */   /* deprecated alias */
+  --font-accent: var(--font-ui); /* @kind font */      /* deprecated alias */
+  --fw-semibold: 600; /* @kind other */                /* deprecated — two weights per screen */
+  --ls-hairline: 0.065px; /* @kind other */
+}
+
+/* Named text styles. Two weights per screen — a third means the hierarchy is wrong. */
+.eth-hero { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-hero); line-height: var(--lh-display); letter-spacing: var(--ls-tight); color: var(--eth-black); }
+.eth-section-headline { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-section); line-height: var(--lh-heading); color: var(--eth-black); }
+.eth-subhead { font-family: var(--font-ui); font-weight: 500; font-size: var(--fs-subhead); line-height: var(--lh-heading); color: var(--eth-ink); }
+.eth-card-title { font-family: var(--font-ui); font-weight: 500; font-size: var(--fs-card-title); line-height: 1.3; color: var(--eth-black); }
+.eth-body { font-family: var(--font-ui); font-weight: 400; font-size: var(--fs-body); line-height: var(--lh-body); max-width: var(--measure-body); color: var(--eth-ink); text-wrap: pretty; }
+.eth-body-lead { font-family: var(--font-ui); font-weight: 300; font-size: clamp(18px, 2vw, 22px); line-height: 1.5; max-width: var(--measure-body); color: var(--eth-ink); }
+.eth-meta { font-family: var(--font-ui); font-weight: 400; font-size: var(--fs-meta); line-height: 1.5; color: var(--eth-grey-39); }
+.eth-legal { font-family: var(--font-ui); font-weight: 400; font-size: var(--fs-legal); line-height: 1.5; color: var(--eth-ink); }
+/* All-caps is for eyebrows, buttons and badges only. */
+.eth-eyebrow { font-family: var(--font-ui); font-weight: 500; font-size: 12px; line-height: 1; letter-spacing: var(--ls-caps-lg); text-transform: uppercase; color: var(--eth-ink); }
+.eth-button-label { font-family: var(--font-ui); font-weight: 500; font-size: var(--fs-meta); line-height: 19.25px; letter-spacing: var(--ls-button); text-transform: uppercase; }
+.eth-badge-label { font-family: var(--font-ui); font-weight: 700; font-size: 12px; line-height: 1.5; letter-spacing: var(--ls-caps); text-transform: uppercase; }
+.eth-nav-link { font-family: var(--font-ui); font-weight: 400; font-size: var(--fs-meta); line-height: 19.25px; letter-spacing: var(--ls-button); text-transform: uppercase; color: var(--eth-ink); }
+.eth-price { font-family: var(--font-ui); font-weight: 500; font-size: var(--fs-body); line-height: 1.4; color: var(--eth-black); }
+
+/* Legacy classes — the capture's styles, kept for the shipped components. */
+.eth-display-xl { font-family: var(--font-display); font-weight: 700; font-size: 60px; line-height: 66px; color: var(--eth-black); }
+.eth-display-lg { font-family: var(--font-display); font-weight: 700; font-size: 46px; line-height: 55.2px; color: var(--eth-black); }
+.eth-display-md { font-family: var(--font-display); font-weight: 700; font-size: 34px; line-height: 40.8px; color: var(--eth-black); }
+.eth-section-title { font-family: var(--font-display); font-weight: 700; font-size: 36px; line-height: 40px; color: var(--eth-black); }
+.eth-section-title-sm { font-family: var(--font-display); font-weight: 700; font-size: 30px; line-height: 36px; color: var(--eth-black); }
+.eth-product-title { font-family: var(--font-ui); font-weight: 500; font-size: 30px; line-height: 36px; color: var(--eth-black); }
+.eth-heading-sm { font-family: var(--font-ui); font-weight: 500; font-size: 20px; line-height: 25px; color: var(--eth-ink); }
+.eth-body-xl { font-family: var(--font-ui); font-weight: 400; font-size: 17.5px; line-height: 1.5; color: var(--eth-ink); }
+.eth-body-lg { font-family: var(--font-ui); font-weight: 400; font-size: 16px; line-height: 1.5; color: var(--eth-ink); }
+.eth-body-tight { font-family: var(--font-ui); font-weight: 400; font-size: 16px; line-height: 1.5; color: var(--eth-black); }
+.eth-body-ui { font-family: var(--font-ui); font-weight: 400; font-size: 16px; line-height: 1.5; color: var(--eth-ink); }
+.eth-body-ui-sm { font-family: var(--font-ui); font-weight: 400; font-size: 14px; line-height: 1.5; color: var(--eth-ink); }
+.eth-caption { font-family: var(--font-ui); font-weight: 400; font-size: 12px; line-height: 1.4; color: var(--eth-ink); }
+.eth-accent-22 { font-family: var(--font-ui); font-weight: 500; font-size: 22px; line-height: 28.8px; }

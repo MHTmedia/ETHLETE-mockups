@@ -1,0 +1,111 @@
+/* ETHLETE colour system.
+   AUTHORITATIVE SOURCE: Brand Guidelines v1.1 (Aug 2026), section 02.
+   Seven core colours and three flavour triads — that is the whole system.
+   Volt is the only accent; everything else is a neutral or a feedback state.
+
+   Removed in the v1.1 alignment (stale values from an earlier scheme, called
+   out by name in the guidelines as "do not carry forward"):
+     --eth-blue #061C81 · --eth-navy #192F5D · --eth-teal #3EB2A2
+     --eth-lime-bright #CCFE3F · --eth-lime-soft #D8ED7D
+   ETHLETE does not use blue. Focus rings now have their own Ink treatment
+   (see tokens/base.css) rather than borrowing a brand colour. */
+:root {
+  /* ---- Core palette: the seven ---- */
+  --eth-volt: #E5FF01; /* @kind color */            /* rgb(229,255,1)   the one accent. High-intent CTAs, badges, highlights. ALWAYS black text — 18.6:1 */
+  --eth-black: #000000; /* @kind color */           /* Ink — wordmark, headlines, primary buttons, borders. White text 21.0:1 */
+  --eth-ink: #212121; /* @kind color */             /* Charcoal — default body copy and nav links. White text 16.1:1 */
+  --eth-white: #FFFFFF; /* @kind color */           /* default page background — the site should feel like the white pouch */
+  --eth-mist: #F7F9FA; /* @kind color */            /* rgb(247,249,250) neutral off-white: alternating sections, cards, inputs */
+  --eth-bone: #F3F3E4; /* @kind color */            /* rgb(243,243,228) warm cream section ground, bridges to the pack's sand tones */
+  --eth-confirm-green: #035B00; /* @kind color */    /* rgb(3,91,0) sale badges, in-stock, savings, quick-add confirm. White text 8.4:1 */
+
+  /* Guideline names, for anyone reading the PDF alongside the code */
+  --eth-charcoal: var(--eth-ink); /* @kind color */
+
+  /* Volt interaction states — derived from Volt, not new palette entries */
+  --eth-volt-deep: #CFE700; /* @kind color */       /* pressed / hover on a Volt fill */
+
+  /* ---- Neutral ramp ---- */
+  --eth-ink-15: #272724; /* @kind color */
+  --eth-ink-10: #1A1A1A; /* @kind color */
+  --eth-grey-39: #646464; /* @kind color */         /* secondary price, muted meta */
+  --eth-grey-49: #7D7D7D; /* @kind color */         /* placeholder, disabled */
+  --eth-grey-64: #A4A4A4; /* @kind color */
+  --eth-grey-82: #D1D1D1; /* @kind color */         /* hairline dividers */
+  --eth-grey-97: #FAFAFA; /* @kind color */
+
+  /* ---- Flavour accents ----
+     Per-SKU, sampled from production photography (accurate to within a shade,
+     NOT lifted from the print artwork — confirm before any large flat fill).
+     For flavour selectors, swatches, PDP accents, collection cards. They never
+     replace the core palette or become a section's dominant colour. */
+  --eth-peach-mango-1: #DB6330; /* @kind color */   /* deep orange */
+  --eth-peach-mango-2: #E9AE71; /* @kind color */   /* peach */
+  --eth-peach-mango-3: #EADFBE; /* @kind color */   /* sand */
+  --eth-lemon-lime-1: #A8C90C; /* @kind color */    /* lime */
+  --eth-lemon-lime-2: #2B4209; /* @kind color */    /* forest */
+  --eth-lemon-lime-3: #EFECC6; /* @kind color */    /* pale citron */
+  --eth-raspberry-lemon-1: #7A2E3E; /* @kind color */ /* raspberry */
+  --eth-raspberry-lemon-2: #E8DE62; /* @kind color */ /* lemon */
+  --eth-raspberry-lemon-3: #D6D2C4; /* @kind color */ /* bone grey */
+
+  /* ---- Feedback ----
+     OPEN ITEM: the guidelines specify Confirm Green but no error colour.
+     This value is carried over from the theme and is not yet brand-approved. */
+  --eth-red: #BD3D44; /* @kind color */
+
+  /* ---- Alphas ---- */
+  --eth-black-70: rgba(0,0,0,0.7); /* @kind color */
+  --eth-black-36: rgba(0,0,0,0.36); /* @kind color */
+  --eth-black-12: rgba(0,0,0,0.12); /* @kind color */
+  --eth-black-5: rgba(0,0,0,0.05); /* @kind color */
+  --eth-white-80: rgba(255,255,255,0.8); /* @kind color */
+  --eth-white-70: rgba(255,255,255,0.7); /* @kind color */
+  --eth-ink-80: rgba(33,33,33,0.8); /* @kind color */
+
+  /* ---- Semantic aliases ---- */
+  --text-primary: var(--eth-ink); /* @kind color */
+  --text-strong: var(--eth-black); /* @kind color */
+  --text-muted: var(--eth-grey-39); /* @kind color */
+  --text-inverse: var(--eth-white); /* @kind color */
+  --text-sale: var(--eth-confirm-green); /* @kind color */
+  --text-link: var(--eth-ink); /* @kind color */
+  --text-link-hover: var(--eth-black); /* @kind color */
+
+  --surface-page: var(--eth-white); /* @kind color */
+  --surface-card: var(--eth-white); /* @kind color */
+  --surface-sunken: var(--eth-bone); /* @kind color */
+  --surface-tint: var(--eth-mist); /* @kind color */
+  --surface-inverse: var(--eth-black); /* @kind color */
+  --surface-accent: var(--eth-volt); /* @kind color */
+
+  --border-strong: var(--eth-black); /* @kind color */
+  --border-hairline: var(--eth-grey-82); /* @kind color */
+  --border-subtle: rgba(0,0,0,0.12); /* @kind color */
+
+  /* Two tiers, not three. Ink carries the standard primary action; Volt is
+     reserved for the single highest-intent one (for ETHLETE, nearly always
+     the subscription option). If Volt appears twice on a screen it has
+     stopped meaning anything. */
+  --action-primary-bg: var(--eth-black); /* @kind color */
+  --action-primary-fg: var(--eth-white); /* @kind color */
+  --action-primary-bg-hover: var(--eth-white); /* @kind color */
+  --action-primary-fg-hover: var(--eth-black); /* @kind color */
+  --action-accent-bg: var(--eth-volt); /* @kind color */
+  --action-accent-fg: var(--eth-black); /* @kind color */  /* black only — white on Volt is 1.1:1 */
+  --action-accent-bg-hover: var(--eth-volt-deep); /* @kind color */
+
+  /* Focus. Blue is gone, so focus gets its own treatment rather than
+     borrowing a brand colour. Ink ring on light ground, Volt on dark. */
+  --focus-ring: var(--eth-black); /* @kind color */
+  --focus-ring-inverse: var(--eth-volt); /* @kind color */
+
+  /* ---- Deprecated aliases ----
+     Kept so the 42 shipped components keep resolving. Use the names above. */
+  --eth-lime: var(--eth-volt); /* @kind color */
+  --eth-lime-deep: var(--eth-volt-deep); /* @kind color */
+  --eth-cream: var(--eth-bone); /* @kind color */
+  --eth-green: var(--eth-confirm-green); /* @kind color */
+  --eth-green-deep: var(--eth-confirm-green); /* @kind color */
+  --eth-grey-92: var(--eth-mist); /* @kind color */
+}
