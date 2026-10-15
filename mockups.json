@@ -1,6 +1,22 @@
 {
-  "homepage":        { "title": "Homepage",        "desc": "Homepage v2. Approved." },
-  "product-page":    { "title": "Product Page",    "desc": "PDP v2, 30-stick subscription. Approved." },
-  "collection-page": { "title": "Collection Page", "desc": "Collection page v2. Approved." },
-  "bundle-builder":  { "title": "Bundle Builder",  "desc": "Build Your Bundle: size, quantity and cadence. Approved." }
+  "homepage": {
+    "title": "Homepage",
+    "desc": "Homepage v2. Approved."
+  },
+  "product-page": {
+    "title": "Product Page",
+    "desc": "PDP v2, 30-stick subscription. Approved."
+  },
+  "collection-page": {
+    "title": "Collection Page",
+    "desc": "Collection page v2. Approved."
+  },
+  "bundle-builder": {
+    "title": "Bundle Builder",
+    "desc": "Build Your Bundle: size, quantity and cadence. Approved."
+  },
+  "nad-pdp": {
+    "title": "NAD+ Product Page",
+    "desc": "NAD+ (NMN + Resveratrol) PDP, new-variants template. v8, in review."
+  }
 }
