@@ -130,6 +130,18 @@ h2{font-size:34px;font-weight:700;letter-spacing:-.3px;line-height:1.12;text-tra
 .ugc .uh2{margin-bottom:8px}.ugc .uintro{font-size:16px;font-weight:400;line-height:1.55;color:#212121;margin:0 0 28px;max-width:603px}
 @media(min-width:801px){.utrack{justify-content:center}}
 @media(max-width:800px){.ugc{padding:36px 0}.ugc .uh2{font-size:28px}.ucard{flex-basis:190px}}
+
+/* Quantity step: copied from default PDP buy box */
+.qstep{display:flex;flex-direction:column;gap:16px;padding-top:22px;margin-bottom:6px}
+.qhd{display:flex;align-items:center;gap:12px}
+.qn{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:24px;height:24px;background:#000;color:#fff;font:700 13px/1 Poppins,-apple-system,sans-serif}
+.ql{flex:0 0 auto;font:700 13px/1 Poppins,-apple-system,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:#000}
+.qrule{flex:1 1 auto;height:1px;background:#000}
+.qrow{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.qbox{display:flex;align-items:center;border:1px solid #000;border-radius:3px}
+.qb{width:48px;height:48px;border:0;background:none;padding:1px 6px;font:400 20px/1 Poppins,-apple-system,sans-serif;color:#000;cursor:pointer}
+.qv{width:44px;text-align:center;font:500 17px/1 Poppins,-apple-system,sans-serif;color:#000}
+.qhelp{font:400 15px/1.45 Poppins,-apple-system,sans-serif;color:#646464}
 </style></head><body>
 <div class="ann">Free shipping on orders over $100</div>
 <div class="hdr"><span class="shop">Shop +</span><span class="logo">ETHLETE®</span><span style="font-size:12px">Account</span></div>
@@ -139,13 +151,13 @@ h2{font-size:34px;font-weight:700;letter-spacing:-.3px;line-height:1.12;text-tra
 <div><div class="rating">Best Seller · ☆☆☆☆☆ No reviews</div><h1>NAD+ (NMN + Resveratrol)</h1>
 <p class="sub">Made for everyday athletes to support energy, endurance, strength, recovery, and mental clarity.  Whether you're starting your fitness journey or a seasoned Ethlete, our NAD+ Longevity+Energy formula can help give you the boost you need.</p>
 <ul class="chk"><li>Supercharge Cellular energy</li><li>Maximize Strength &amp; Recovery</li><li>Boost Endurance</li></ul>
-<div class="step"><span class="n">1</span>SUPPLY</div><span class="pill">1-month supply</span>
+<div class="qstep"><div class="qhd"><span class="qn">1</span><span class="ql">Quantity</span><span class="qrule"></span></div><div class="qrow"><div class="qbox"><button type="button" class="qb" id="qdec" aria-label="Fewer jars">−</button><span class="qv" id="qv">1</span><button type="button" class="qb" id="qinc" aria-label="More jars">+</button></div><span class="qhelp" id="qhelp">1 month supply</span></div></div>
 <div class="step"><span class="n">2</span>DELIVERY</div>
-<div class="opt sel"><div class="row"><span>◉ Subscribe &amp; Save <span class="badge">SAVE 40%</span></span><span><s>$64.00</s>$22.80</span></div>
+<div class="opt sel"><div class="row"><span>◉ Subscribe &amp; Save <span class="badge">SAVE 40%</span></span><span><s data-p="64">$64.00</s><span data-p="22.80">$22.80</span></span></div>
 <div class="del">Delivered <select><option>1 month</option></select></div><ul class="perks"><li>Modify or cancel anytime. Free shipping included.</li></ul></div>
-<div class="opt"><div class="row"><span>○ One-time purchase</span><span><s>$64.00</s>$38.00</span></div></div>
+<div class="opt"><div class="row"><span>○ One-time purchase</span><span><s data-p="64">$64.00</s><span data-p="38">$38.00</span></span></div></div>
 <div class="ph" style="min-height:40px">No live content: needs copy<br><small>Auto-renew terms line under options</small></div>
-<button class="atc">ADD TO CART · $22.80</button><div class="spay">Buy with shop</div>
+<button class="atc">ADD TO CART · <span data-p="22.80">$22.80</span></button><div class="spay">Buy with shop</div>
 <div class="trust"><div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>Free shipping on orders over $100</div><div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></svg>Made in USA</div><div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Third Party NSF Tested</div></div>
 <div class="accs"><div class="acc open"><button class="acc-h">Why NAD+<span class="pm"></span></button><div class="acc-b"><div><div class="acc-in"><p>ETHLETE NAD+ combines <strong>500 mg of NMN</strong>, a powerful NAD+ precursor, with <strong>250 mg of Trans-Resveratrol</strong> to support cellular energy, healthy metabolism, cognitive function, and healthy aging. Crafted with premium ingredients and minimal fillers, our clean, science-backed formula helps fuel your body at the cellular level so you can perform and feel your best every day.</p></div></div></div></div><div class="acc"><button class="acc-h">Ingredients<span class="pm"></span></button><div class="acc-b"><div><div class="acc-in"><p><strong>🧬 NMN (β-Nicotinamide Mononucleotide) (500mg)</strong><br>A direct NAD+ precursor that helps support healthy cellular energy production, mitochondrial function, and healthy aging by replenishing the body's natural NAD+ levels.</p>
 <p><strong>🍇 Trans-Resveratrol (250mg)</strong><br>A powerful antioxidant that helps support cellular health and works alongside NMN to promote healthy aging and protect against oxidative stress.</p>
@@ -186,6 +198,9 @@ const t=document.getElementById('track');function go(d){t.scrollBy({left:d*t.cli
 document.querySelectorAll('.th').forEach(e=>e.onclick=()=>t.scrollTo({left:e.dataset.i*t.clientWidth,behavior:'smooth'}));
 t.addEventListener('scroll',()=>{const i=Math.round(t.scrollLeft/t.clientWidth);document.querySelectorAll('.th').forEach((e,j)=>e.classList.toggle('on',i==j))});
 document.querySelectorAll('.acc-h').forEach(h=>h.onclick=()=>{const a=h.parentElement,g=a.parentElement,o=a.classList.contains('open');g.querySelectorAll(':scope>.acc').forEach(x=>x.classList.remove('open'));if(!o)a.classList.add('open')});
+let qn=1;const qv=document.getElementById('qv'),qh=document.getElementById('qhelp');
+function qset(n){qn=Math.max(1,Math.min(9,n));qv.textContent=qn;qh.textContent=qn+' month supply';document.querySelectorAll('[data-p]').forEach(e=>e.textContent='$'+(parseFloat(e.dataset.p)*qn).toFixed(2))}
+document.getElementById('qdec').onclick=()=>qset(qn-1);document.getElementById('qinc').onclick=()=>qset(qn+1);
 const ut=document.getElementById('utrack'),uc=ut.parentElement,up=document.querySelector('.uarr.prev'),un=document.querySelector('.uarr.next');let ux=0;
 function umax(){return Math.max(0,ut.scrollWidth-uc.clientWidth)}
 function uset(x){ux=Math.max(0,Math.min(umax(),x));ut.style.transform=`translateX(-${ux}px)`;const m=umax();up.hidden=un.hidden=m===0;up.disabled=ux<=0;un.disabled=ux>=m}
