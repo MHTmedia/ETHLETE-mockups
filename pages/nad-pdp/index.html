@@ -149,6 +149,13 @@ h2{font-size:34px;font-weight:700;letter-spacing:-.3px;line-height:1.12;text-tra
 .rval{font:500 14px/1 Poppins,-apple-system,sans-serif;color:#000}
 .rcount{font:400 14px/1 Poppins,-apple-system,sans-serif;color:#646464;text-decoration:none}
 .rating+h1{margin-top:10px}
+
+/* Subscribe & Save frequency pills: copied from default PDP */
+.opt{cursor:pointer}.rd{font-style:normal}
+.opt .del{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.opt:not(.sel) .del{opacity:.4;pointer-events:none}
+.fqs{display:flex;flex-wrap:wrap;gap:8px}
+.fq{min-height:40px;display:flex;align-items:center;padding:0 14px;border:1px solid #d1d1d1;border-radius:3px;font:500 14px/1 Poppins,-apple-system,sans-serif;cursor:pointer;background:#fff;color:#000;white-space:nowrap}
+.fq.on{background:#e5ff01;border-color:#000}
 </style></head><body>
 <div class="ann">Free shipping on orders over $100</div>
 <div class="hdr"><span class="shop">Shop +</span><span class="logo">ETHLETE®</span><span style="font-size:12px">Account</span></div>
@@ -160,9 +167,9 @@ h2{font-size:34px;font-weight:700;letter-spacing:-.3px;line-height:1.12;text-tra
 <ul class="chk"><li>Supercharge Cellular energy</li><li>Maximize Strength &amp; Recovery</li><li>Boost Endurance</li></ul>
 <div class="qstep"><div class="qhd"><span class="qn">1</span><span class="ql">Quantity</span><span class="qrule"></span></div><div class="qrow"><div class="qbox"><button type="button" class="qb" id="qdec" aria-label="Fewer jars">−</button><span class="qv" id="qv">1</span><button type="button" class="qb" id="qinc" aria-label="More jars">+</button></div><span class="qhelp" id="qhelp">1 month supply</span></div></div>
 <div class="step"><span class="n">2</span>DELIVERY</div>
-<div class="opt sel"><div class="row"><span>◉ Subscribe &amp; Save <span class="badge">SAVE 40%</span></span><span><s data-p="64">$64.00</s><span data-p="22.80">$22.80</span></span></div>
-<div class="del">Delivered <select><option>1 month</option></select></div><ul class="perks"><li>Modify or cancel anytime. Free shipping included.</li></ul></div>
-<div class="opt"><div class="row"><span>○ One-time purchase</span><span><s data-p="64">$64.00</s><span data-p="38">$38.00</span></span></div></div>
+<div class="opt sel" data-plan="sub" role="radio" aria-checked="true"><div class="row"><span><span class="lbl"><i class="rd">◉</i> Subscribe &amp; Save</span> <span class="badge">SAVE 40%</span></span><span><s data-p="64">$64.00</s><span data-p="22.80">$22.80</span></span></div>
+<div class="del"><span class="dl">Delivered every</span><div class="fqs" role="group" aria-label="Delivery frequency"><button type="button" class="fq on" aria-pressed="true" data-m="1">1 month</button><button type="button" class="fq" aria-pressed="false" data-m="2">2 months</button><button type="button" class="fq" aria-pressed="false" data-m="3">3 months</button></div></div><ul class="perks"><li>Modify or cancel anytime. Free shipping included.</li></ul></div>
+<div class="opt" data-plan="once" role="radio" aria-checked="false"><div class="row"><span><span class="lbl"><i class="rd">○</i> One-time purchase</span></span><span><s data-p="64">$64.00</s><span data-p="38">$38.00</span></span></div></div>
 <div class="ph" style="min-height:40px">No live content: needs copy<br><small>Auto-renew terms line under options</small></div>
 <button class="atc">ADD TO CART · <span data-p="22.80">$22.80</span></button><div class="spay">Buy with shop</div>
 <div class="trust"><div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>Free shipping on orders over $100</div><div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></svg>Made in USA</div><div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Third Party NSF Tested</div></div>
@@ -208,6 +215,9 @@ document.querySelectorAll('.acc-h').forEach(h=>h.onclick=()=>{const a=h.parentEl
 let qn=1;const qv=document.getElementById('qv'),qh=document.getElementById('qhelp');
 function qset(n){qn=Math.max(1,Math.min(9,n));qv.textContent=qn;qh.textContent=qn+' month supply';document.querySelectorAll('[data-p]').forEach(e=>e.textContent='$'+(parseFloat(e.dataset.p)*qn).toFixed(2))}
 document.getElementById('qdec').onclick=()=>qset(qn-1);document.getElementById('qinc').onclick=()=>qset(qn+1);
+document.querySelectorAll('.fq').forEach(b=>b.onclick=e=>{e.stopPropagation();document.querySelectorAll('.fq').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)})});
+const atcP=document.querySelector('.atc [data-p]');
+document.querySelectorAll('.opt[data-plan]').forEach(o=>o.onclick=()=>{document.querySelectorAll('.opt[data-plan]').forEach(x=>{const on=x===o;x.classList.toggle('sel',on);x.setAttribute('aria-checked',on);x.querySelector('.rd').textContent=on?'◉':'○'});document.querySelectorAll('.fq').forEach(f=>f.disabled=o.dataset.plan!=='sub');atcP.dataset.p=o.dataset.plan==='sub'?'22.80':'38';qset(qn)});
 const ut=document.getElementById('utrack'),uc=ut.parentElement,up=document.querySelector('.uarr.prev'),un=document.querySelector('.uarr.next');let ux=0;
 function umax(){return Math.max(0,ut.scrollWidth-uc.clientWidth)}
 function uset(x){ux=Math.max(0,Math.min(umax(),x));ut.style.transform=`translateX(-${ux}px)`;const m=umax();up.hidden=un.hidden=m===0;up.disabled=ux<=0;un.disabled=ux>=m}
